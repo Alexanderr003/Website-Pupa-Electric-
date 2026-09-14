@@ -34,7 +34,7 @@ the job dossier stay marked as pending until real site photography exists.
 pnpm install
 pnpm dev            # http://localhost:3000 -> redirects to your language
 pnpm build          # 16 prerendered routes
-pnpm typecheck
+pnpm typecheck      # the gate — `next lint` was removed in Next 16
 pnpm check:todos    # everything the owner still has to supply
 ```
 
