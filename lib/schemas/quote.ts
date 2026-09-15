@@ -1,12 +1,13 @@
 import { z } from 'zod';
 
+/** Mirrors the ids in content/services.ts, which mirror the company van. */
 export const serviceIds = [
-  'battery',
-  'medium-voltage',
-  'distribution-board',
-  'ev-charging',
-  'maintenance',
-  'advice',
+  'elektra',
+  'licht-kracht',
+  'opslag',
+  'laadinfra',
+  'middenspanning',
+  'service',
 ] as const;
 
 export const connections = ['1x25', '3x25', '3x35', '3x80', 'grootverbruik', 'unknown'] as const;

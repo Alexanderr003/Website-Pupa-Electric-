@@ -8,6 +8,11 @@ import type { Locale } from './config';
 const ui = {
   nl: {
     legalPrivacy: 'Privacy',
+    vanAlt: 'De bus van Pupa Elektrotechniek naast een rij batterijkasten op een bedrijventerrein.',
+    vanTitle: 'Eén bus, één ploeg, van de eerste meting tot de laatste keuring.',
+    vanBody:
+      'Wij besteden het zware werk niet uit. Dezelfde monteurs die de rails opbouwen, meten de installatie ook door en zetten hun handtekening onder het dossier. Daarom weten wij bij een storing precies waar wij moeten kijken.',
+    vanServices: 'Elektra · Licht en kracht · Energieopslag · Laadpalen · Service',
     legalTerms: 'Algemene voorwaarden',
     whatsappIntro: 'Goedendag, ik heb een vraag over een installatie.',
 
@@ -44,7 +49,7 @@ const ui = {
     fByPhone: 'Bellen',
     fByEmail: 'Mailen',
     fByWhatsapp: 'WhatsApp',
-    fConsent: 'Ik ga ermee akkoord dat Pupa Electric mijn gegevens gebruikt om deze aanvraag te beantwoorden.',
+    fConsent: 'Ik ga ermee akkoord dat Pupa Elektrotechniek mijn gegevens gebruikt om deze aanvraag te beantwoorden.',
     fOptional: 'optioneel',
 
     back: 'Vorige',
@@ -79,6 +84,11 @@ const ui = {
   },
   en: {
     legalPrivacy: 'Privacy',
+    vanAlt: 'The Pupa Elektrotechniek van beside a row of battery cabinets on an industrial estate.',
+    vanTitle: 'One van, one crew, from the first measurement to the final inspection.',
+    vanBody:
+      'We do not subcontract the heavy work. The same engineers who build the busbars also test the installation and sign the dossier. That is why, when something trips, we already know where to look.',
+    vanServices: 'Power · Light & power · Storage · Charging · Service',
     legalTerms: 'Terms and conditions',
     whatsappIntro: 'Hello, I have a question about an installation.',
 
@@ -115,7 +125,7 @@ const ui = {
     fByPhone: 'Phone',
     fByEmail: 'Email',
     fByWhatsapp: 'WhatsApp',
-    fConsent: 'I agree that Pupa Electric may use my details to answer this request.',
+    fConsent: 'I agree that Pupa Elektrotechniek may use my details to answer this request.',
     fOptional: 'optional',
 
     back: 'Back',
@@ -150,6 +160,11 @@ const ui = {
   },
   es: {
     legalPrivacy: 'Privacidad',
+    vanAlt: 'La furgoneta de Pupa Elektrotechniek junto a una fila de armarios de baterías en un polígono.',
+    vanTitle: 'Una furgoneta, un equipo, de la primera medición a la inspección final.',
+    vanBody:
+      'No subcontratamos el trabajo pesado. Los mismos técnicos que montan los embarrados miden la instalación y firman el expediente. Por eso, cuando algo salta, ya sabemos dónde mirar.',
+    vanServices: 'Electra · Luz y fuerza · Almacenaje · Recarga · Servicio',
     legalTerms: 'Condiciones generales',
     whatsappIntro: 'Buenos días, tengo una consulta sobre una instalación.',
 
@@ -186,7 +201,7 @@ const ui = {
     fByPhone: 'Teléfono',
     fByEmail: 'Correo',
     fByWhatsapp: 'WhatsApp',
-    fConsent: 'Acepto que Pupa Electric use mis datos para responder a esta solicitud.',
+    fConsent: 'Acepto que Pupa Elektrotechniek use mis datos para responder a esta solicitud.',
     fOptional: 'opcional',
 
     back: 'Atrás',

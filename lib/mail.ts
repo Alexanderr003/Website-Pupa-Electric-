@@ -32,7 +32,7 @@ function asLines(input: QuoteInput, reference: string): string {
 export async function deliverQuote(input: QuoteInput, reference: string): Promise<Delivery> {
   const key = process.env.RESEND_API_KEY;
   const to = process.env.QUOTE_TO_EMAIL;
-  const from = process.env.RESEND_FROM ?? 'Pupa Electric <onboarding@resend.dev>';
+  const from = process.env.RESEND_FROM ?? 'Pupa Elektrotechniek <onboarding@resend.dev>';
 
   if (!key || !to || to.startsWith('TODO_')) {
     if (process.env.NODE_ENV === 'production') {

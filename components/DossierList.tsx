@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import type { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/get-dictionary';
 import { dossier } from '@/content/dossier';
@@ -35,10 +36,17 @@ export function DossierList({ locale }: { locale: Locale }) {
                 <span>{nbsp(copy.norm)}</span>
               </span>
               <div className="shots">
-                {Array.from({ length: phase.photos }, (_, i) => (
-                  <div className="shot" key={i}>
-                    <span>{t.photo}</span>
-                  </div>
+                {phase.photos.map((name) => (
+                  <figure className="shot" key={name}>
+                    <Image
+                      src={`/img/${name}.webp`}
+                      alt={copy.title}
+                      width={800}
+                      height={1000}
+                      loading="lazy"
+                      sizes="160px"
+                    />
+                  </figure>
                 ))}
               </div>
             </div>

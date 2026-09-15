@@ -1,4 +1,4 @@
-# Pupa Electric
+# Pupa Elektrotechniek
 
 Marketing site for a Dutch electrical contractor: battery storage, medium-voltage
 substations, industrial distribution boards, charging infrastructure, and the
@@ -74,7 +74,7 @@ Copy `.env.example` to `.env.local`. Every variable is optional in development:
 
 | Variable | Effect when unset |
 |---|---|
-| `NEXT_PUBLIC_SITE_URL` | canonical URLs fall back to `https://pupa-electric.nl` |
+| `NEXT_PUBLIC_SITE_URL` | canonical URLs fall back to `https://pupa-elektrotechniek.nl` |
 | `NEXT_PUBLIC_WHATSAPP` | the floating button points at the quote form instead |
 | `RESEND_API_KEY`, `QUOTE_TO_EMAIL` | quote requests are written to the server log and the visitor still sees success — **in production a missing key is a visible error instead, because a lost lead is worse than a silent drop** |
 

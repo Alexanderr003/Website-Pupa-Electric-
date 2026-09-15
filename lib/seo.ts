@@ -1,7 +1,7 @@
 import { locales, type Locale } from '@/i18n/config';
 
 export function siteUrl(): string {
-  return process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ?? 'https://pupa-electric.nl';
+  return process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ?? 'https://pupa-elektrotechniek.nl';
 }
 
 export function absolute(path: string): string {

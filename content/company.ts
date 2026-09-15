@@ -13,7 +13,7 @@ export type Company = {
 };
 
 export const company: Company = {
-  name: 'Pupa Electric',
+  name: 'Pupa Elektrotechniek',
   phone: 'TODO_PHONE',
   email: 'TODO_EMAIL',
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP ?? 'TODO_WHATSAPP',

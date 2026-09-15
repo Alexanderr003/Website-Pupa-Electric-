@@ -11,7 +11,8 @@ import { Ticker } from '@/components/Ticker';
 import { ServiceGrid } from '@/components/ServiceGrid';
 import { LoadChart } from '@/components/LoadChart';
 import { DossierList } from '@/components/DossierList';
-import { BeforeAfter } from '@/components/BeforeAfter';
+import { PhotoWall } from '@/components/PhotoWall';
+import { VanBand } from '@/components/VanBand';
 import { PriceTable } from '@/components/PriceTable';
 import { CertWall } from '@/components/CertWall';
 import { LocalBusinessJsonLd } from '@/components/JsonLd';
@@ -128,17 +129,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <h2>{t.h2d}</h2>
             <p className="lede">{nbsp(t.p4)}</p>
           </div>
-          <BeforeAfter
-            labels={{
-              before: t.tagA,
-              after: t.tagB,
-              control: t.cmplabel,
-              unit: t.cmpunit,
-              beforeAlt: t.voorAlt,
-              afterAlt: t.naAlt,
-              hint: t.cap3,
-            }}
-          />
+          <PhotoWall locale={locale} />
+          <p className="caption">{t.cap3}</p>
         </section>
 
         <section className="sec" id="prijs">
@@ -167,7 +159,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </section>
 
         <section className="sec" id="offerte">
-          <div className="cta">
+          <VanBand locale={locale} />
+          <div className="cta" style={{ marginTop: 'clamp(22px,3vw,34px)' }}>
             <div>
               <h2>{t.h2g}</h2>
               <p>{nbsp(t.p7)}</p>

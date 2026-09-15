@@ -10,39 +10,130 @@ export type DossierCopy = {
 export type DossierPhase = Localised<DossierCopy> & {
   /** ISO date — rendered per locale with Intl.DateTimeFormat */
   date: string;
-  /** how many photographs belong to this phase (placeholders until supplied) */
-  photos: number;
   crew: string;
+  /** photographs actually taken during this phase */
+  photos: string[];
 };
 
-const raw = [
-    {date:'2026-03-02', shots:2, crew:'2',
-     nl:{t:'Intake & netberekening',d:'Aansluitwaarde en kortsluitvermogen opgevraagd bij de netbeheerder; verbruiksprofiel uitgelezen uit de slimme meter.',n:'Aansluitwaarde 3×25 A geverifieerd'},
-     en:{t:'Intake & grid calculation',d:'Connection capacity and short-circuit power requested from the grid operator; consumption profile read from the smart meter.',n:'Connection capacity 3×25 A verified'},
-     es:{t:'Visita previa y cálculo de red',d:'Potencia de acometida y poder de cortocircuito solicitados a la distribuidora; perfil de consumo leído del contador inteligente.',n:'Acometida 3×25 A verificada'}},
-    {date:'2026-03-06', shots:1, crew:'1',
-     nl:{t:'Ontwerp & eendraadschema',d:'Kabelberekening, selectiviteit en plaatsbepaling; het schema is vooraf met de klant doorgenomen.',n:'NEN 1010 deel 4 — beveiliging tegen overstroom'},
-     en:{t:'Design & one-line diagram',d:'Cable sizing, discrimination and siting; the diagram was walked through with the client beforehand.',n:'NEN 1010 part 4 — overcurrent protection'},
-     es:{t:'Diseño y esquema unifilar',d:'Cálculo de secciones, selectividad y ubicación; el esquema se repasó con el cliente de antemano.',n:'NEN 1010 parte 4 — protección contra sobreintensidad'}},
-    {date:'2026-03-18', shots:3, crew:'2',
-     nl:{t:'Montage',d:'Batterijkast geplaatst, voeding aangelegd, kabelschoenen op moment aangedraaid en per aansluiting gelogd.',n:'Aandraaimomenten gelogd per aansluiting'},
-     en:{t:'Installation',d:'Battery cabinet placed, supply routed, cable lugs torqued to spec and logged per terminal.',n:'Torque values logged per terminal'},
-     es:{t:'Montaje',d:'Armario de baterías colocado, alimentación tendida, terminales apretados a par y registrados uno a uno.',n:'Pares de apriete registrados por terminal'}},
-    {date:'2026-03-19', shots:2, crew:'2',
-     nl:{t:'Keuring & inbedrijfstelling',d:'Isolatieweerstand, aardverspreidingsweerstand en uitschakeltijd van de aardlekbeveiliging gemeten en genoteerd.',n:'NEN 1010 — meetrapport opgesteld'},
-     en:{t:'Inspection & commissioning',d:'Insulation resistance, earth electrode resistance and RCD trip time measured and recorded.',n:'NEN 1010 — test report issued'},
-     es:{t:'Inspección y puesta en marcha',d:'Resistencia de aislamiento, resistencia de puesta a tierra y tiempo de disparo del diferencial medidos y anotados.',n:'NEN 1010 — informe de medición emitido'}},
-    {date:'2026-03-20', shots:1, crew:'1',
-     nl:{t:'Oplevering & dossier',d:'Eendraadschema, meetrapport, foto’s, garantiebewijzen en bedieningsinstructie overhandigd en doorgenomen.',n:'Dossier ondertekend door klant en monteur'},
-     en:{t:'Handover & dossier',d:'One-line diagram, test report, photographs, warranty certificates and operating instructions handed over and explained.',n:'Dossier signed by client and engineer'},
-     es:{t:'Entrega y expediente',d:'Esquema unifilar, informe de medición, fotos, certificados de garantía e instrucciones de uso entregados y explicados.',n:'Expediente firmado por cliente y técnico'}}
-  ];
-
-export const dossier: DossierPhase[] = raw.map((p) => ({
-  date: p.date,
-  photos: p.shots,
-  crew: p.crew,
-  nl: { title: p.nl.t, summary: p.nl.d, norm: p.nl.n },
-  en: { title: p.en.t, summary: p.en.d, norm: p.en.n },
-  es: { title: p.es.t, summary: p.es.d, norm: p.es.n },
-}));
+/**
+ * One real job, phase by phase: a 3200 A main distribution board with a busbar
+ * system. Client and location are left out on purpose; everything else —
+ * the sequence, the checks, the photographs — is what the customer receives.
+ */
+export const dossier: DossierPhase[] = [
+  {
+    date: '2026-03-02',
+    crew: '2',
+    photos: ['work-09'],
+    nl: {
+      title: 'Intake & inmeten',
+      summary:
+        'Kabeltracé en invoer opgenomen, aansluitwaarde en kortsluitvermogen opgevraagd bij de netbeheerder, en de bestaande kabelkelder ingemeten.',
+      norm: 'Aansluitwaarde en kortsluitvermogen schriftelijk bevestigd',
+    },
+    en: {
+      title: 'Survey & measuring up',
+      summary:
+        'Cable route and entry recorded, connection capacity and short-circuit power requested from the grid operator, and the existing cable basement measured.',
+      norm: 'Connection capacity and short-circuit power confirmed in writing',
+    },
+    es: {
+      title: 'Visita previa y toma de medidas',
+      summary:
+        'Trazado y entrada de cable registrados, potencia de acometida y poder de cortocircuito solicitados a la distribuidora, y sótano de cables medido.',
+      norm: 'Potencia y poder de cortocircuito confirmados por escrito',
+    },
+  },
+  {
+    date: '2026-03-06',
+    crew: '1',
+    photos: ['work-03'],
+    nl: {
+      title: 'Ontwerp & railberekening',
+      summary:
+        'Railmaten, kortsluitvastheid en selectiviteit doorgerekend; velden vooraf genummerd zodat de kast op papier al klopt.',
+      norm: 'NEN 1010 deel 4 — beveiliging tegen overstroom',
+    },
+    en: {
+      title: 'Design & busbar calculation',
+      summary:
+        'Busbar sizing, short-circuit withstand and discrimination calculated; sections numbered in advance so the board is right on paper first.',
+      norm: 'NEN 1010 part 4 — overcurrent protection',
+    },
+    es: {
+      title: 'Diseño y cálculo de embarrado',
+      summary:
+        'Dimensionado de pletinas, resistencia al cortocircuito y selectividad calculados; campos numerados de antemano.',
+      norm: 'NEN 1010 parte 4 — protección contra sobreintensidad',
+    },
+  },
+  {
+    date: '2026-03-18',
+    crew: '2',
+    photos: ['work-06', 'work-04'],
+    nl: {
+      title: 'Montage',
+      summary:
+        'Railsysteem opgebouwd, kabelschoenen geperst met de juiste matrijs, bouten aangedraaid op moment en direct gemarkeerd.',
+      norm: 'Aandraaimomenten gelogd en zichtbaar gemarkeerd',
+    },
+    en: {
+      title: 'Installation',
+      summary:
+        'Busbar system built up, lugs crimped with the correct die, bolts torqued to spec and marked on the spot.',
+      norm: 'Torque values logged and visibly marked',
+    },
+    es: {
+      title: 'Montaje',
+      summary:
+        'Embarrado montado, terminales prensados con la matriz correcta, tornillos apretados a par y marcados en el acto.',
+      norm: 'Pares de apriete registrados y marcados a la vista',
+    },
+  },
+  {
+    date: '2026-03-19',
+    crew: '2',
+    photos: ['work-01', 'work-07'],
+    nl: {
+      title: 'Keuring & inbedrijfstelling',
+      summary:
+        'Isolatieweerstand, aardverspreidingsweerstand en uitschakeltijden gemeten; fasen gecontroleerd en gelabeld voordat er spanning op ging.',
+      norm: 'NEN 1010 — meetrapport opgesteld',
+    },
+    en: {
+      title: 'Inspection & commissioning',
+      summary:
+        'Insulation resistance, earth electrode resistance and trip times measured; phases checked and labelled before anything went live.',
+      norm: 'NEN 1010 — test report issued',
+    },
+    es: {
+      title: 'Inspección y puesta en marcha',
+      summary:
+        'Resistencia de aislamiento, puesta a tierra y tiempos de disparo medidos; fases verificadas y rotuladas antes de dar tensión.',
+      norm: 'NEN 1010 — informe de medición emitido',
+    },
+  },
+  {
+    date: '2026-03-20',
+    crew: '1',
+    photos: ['work-02'],
+    nl: {
+      title: 'Oplevering & dossier',
+      summary:
+        'Schema, meetrapport, foto’s van elke fase, garantiebewijzen en bedieningsinstructie overhandigd en ter plaatse doorgenomen.',
+      norm: 'Dossier ondertekend door klant en monteur',
+    },
+    en: {
+      title: 'Handover & dossier',
+      summary:
+        'Diagram, test report, photographs of every phase, warranty certificates and operating instructions handed over and walked through on site.',
+      norm: 'Dossier signed by client and engineer',
+    },
+    es: {
+      title: 'Entrega y expediente',
+      summary:
+        'Esquema, informe de medición, fotos de cada fase, certificados de garantía e instrucciones entregados y repasados in situ.',
+      norm: 'Expediente firmado por cliente y técnico',
+    },
+  },
+];

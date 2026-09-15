@@ -21,19 +21,29 @@ export function Header({ locale }: { locale: Locale }) {
     <header className="hdr">
       <div className="wrap hdr-in">
         <Link className="brand" href={home}>
-          <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
-            <circle cx="17" cy="17" r="8.5" fill="var(--zon)" />
-            <g stroke="var(--zon)" strokeWidth="2.4" strokeLinecap="round">
-              <path d="M17 1.5v4M17 28.5v4M1.5 17h4M28.5 17h4" />
-              <path d="M6.2 6.2l2.8 2.8M25 25l2.8 2.8M27.8 6.2L25 9M9 25l-2.8 2.8" opacity=".55" />
-            </g>
-            <path d="M18.6 11.6l-4.4 6.2h3.1l-1.4 4.8 4.5-6.4h-3.2z" fill="var(--zwart)" />
+          <svg width="36" height="36" viewBox="0 0 48 48" aria-hidden="true">
+            <circle cx="24" cy="20.5" r="14.5" fill="var(--zon)" />
+            {[0, 1].map((row) =>
+              [0, 1, 2].map((col) => (
+                <rect
+                  key={`${row}-${col}`}
+                  x={9.2 + col * 10.5}
+                  y={20.5 + row * 10.5}
+                  width="9"
+                  height="9"
+                  rx="1.6"
+                  fill="var(--zwart)"
+                />
+              )),
+            )}
           </svg>
           <span className="brand-txt">
             <span className="brand-name" translate="no">
-              Pupa Electric
+              Pupa
             </span>
-            <span className="brand-sub">{t.brandsub}</span>
+            <span className="brand-sub" translate="no">
+              Elektrotechniek
+            </span>
           </span>
         </Link>
 

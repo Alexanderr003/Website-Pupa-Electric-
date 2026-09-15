@@ -48,14 +48,14 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL(siteUrl()),
-    title: { default: `Pupa Electric — ${t.brandsub}`, template: '%s | Pupa Electric' },
+    title: { default: `Pupa Elektrotechniek — ${t.brandsub}`, template: '%s | Pupa Elektrotechniek' },
     description: t.lede,
     alternates: alternatesFor('/', locale),
     openGraph: {
       type: 'website',
-      siteName: 'Pupa Electric',
+      siteName: 'Pupa Elektrotechniek',
       locale: ogLocales[locale],
-      title: `Pupa Electric — ${t.brandsub}`,
+      title: `Pupa Elektrotechniek — ${t.brandsub}`,
       description: t.lede,
     },
     robots: { index: true, follow: true },

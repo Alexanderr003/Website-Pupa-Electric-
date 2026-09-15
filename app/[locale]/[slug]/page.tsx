@@ -16,16 +16,6 @@ export function generateStaticParams() {
   return allStaticPaths();
 }
 
-/** Schema value -> the service entry it corresponds to, keyed by image basename. */
-const SERVICE_IDS: Record<string, string> = {
-  batterij: 'battery',
-  middenspanning: 'medium-voltage',
-  verdeelkast: 'distribution-board',
-  laadpaal: 'ev-charging',
-  onderhoud: 'maintenance',
-  advies: 'advice',
-};
-
 function titleFor(page: PageId, t: ReturnType<typeof getDictionary>): string {
   if (page === 'quote') return t.qTitle;
   if (page === 'privacy') return t.privacyTitle;
@@ -67,10 +57,7 @@ export default async function SecondaryPage({
   const t = getDictionary(locale);
 
   if (page === 'quote') {
-    const serviceLabels: [string, string][] = services.map((s) => [
-      SERVICE_IDS[s.image] ?? s.image,
-      s[locale].name,
-    ]);
+    const serviceLabels: [string, string][] = services.map((s) => [s.id, s[locale].name]);
 
     return (
       <div className="wrap">
