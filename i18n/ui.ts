@@ -8,6 +8,9 @@ import type { Locale } from './config';
 const ui = {
   nl: {
     legalPrivacy: 'Privacy',
+    themeAuto: 'Weergave: volgt je apparaat — klik voor licht',
+    themeLight: 'Weergave: licht — klik voor donker',
+    themeDark: 'Weergave: donker — klik om je apparaat te volgen',
     vanAlt: 'De bus van Pupa Elektrotechniek naast een rij batterijkasten op een bedrijventerrein.',
     vanTitle: 'Eén bus, één ploeg, van de eerste meting tot de laatste keuring.',
     vanBody:
@@ -84,6 +87,9 @@ const ui = {
   },
   en: {
     legalPrivacy: 'Privacy',
+    themeAuto: 'Appearance: follows your device — click for light',
+    themeLight: 'Appearance: light — click for dark',
+    themeDark: 'Appearance: dark — click to follow your device',
     vanAlt: 'The Pupa Elektrotechniek van beside a row of battery cabinets on an industrial estate.',
     vanTitle: 'One van, one crew, from the first measurement to the final inspection.',
     vanBody:
@@ -160,6 +166,9 @@ const ui = {
   },
   es: {
     legalPrivacy: 'Privacidad',
+    themeAuto: 'Apariencia: sigue a tu dispositivo — pulsa para claro',
+    themeLight: 'Apariencia: claro — pulsa para oscuro',
+    themeDark: 'Apariencia: oscuro — pulsa para seguir a tu dispositivo',
     vanAlt: 'La furgoneta de Pupa Elektrotechniek junto a una fila de armarios de baterías en un polígono.',
     vanTitle: 'Una furgoneta, un equipo, de la primera medición a la inspección final.',
     vanBody:

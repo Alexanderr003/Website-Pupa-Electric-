@@ -4,6 +4,7 @@ import { getDictionary } from '@/i18n/get-dictionary';
 import { hrefFor } from '@/i18n/routing';
 import { LocaleSwitcher } from './LocaleSwitcher';
 import { MotionToggle } from './MotionToggle';
+import { ThemeToggle } from './ThemeToggle';
 
 export function Header({ locale }: { locale: Locale }) {
   const t = getDictionary(locale);
@@ -56,6 +57,9 @@ export function Header({ locale }: { locale: Locale }) {
         </nav>
 
         <div className="tools">
+          <ThemeToggle
+            labels={{ auto: t.themeAuto, light: t.themeLight, dark: t.themeDark }}
+          />
           <MotionToggle pauseLabel={t.motionLabel} resumeLabel={t.motionResume} />
           <LocaleSwitcher current={locale} label="Taal / Language / Idioma" />
           <Link className="btn btn-p" href={hrefFor('quote', locale)}>

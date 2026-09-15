@@ -22,6 +22,18 @@ prove workmanship rather than claim it:
 can carry meaning: it marks what is live, what is certified, and what costs
 money. Everything else is a warm neutral derived from the same two.
 
+The page ships light and dark, and the header control cycles
+auto → light → dark. Auto is the default, because a visitor who has already
+told their phone they want dark should not have to tell us as well. The choice
+is stamped on `<html>` before first paint, so a chosen theme never flashes the
+other one.
+
+Two rules keep that honest. Brand yellow is a *fill*, never ink: `--zon-ink`
+and `--zon-graf` darken on paper so type and chart marks stay readable, while
+`--zon` keeps its brightness for anything sitting on a dark ground. And the
+hero and the photo captions are pinned to the light-on-dark set regardless of
+theme, because they sit on a photograph that is dark either way.
+
 **The imagery is generated, not stock.** The hero and the isometric service
 renders in `public/img` were produced for this site. They are deliberately
 *illustrations*, not photographs: presenting invented photos as the company's

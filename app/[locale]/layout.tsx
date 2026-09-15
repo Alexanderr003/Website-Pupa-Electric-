@@ -63,11 +63,13 @@ export async function generateMetadata({
 }
 
 /**
- * Applies the stored motion preference before first paint, so a visitor who
- * switched ambient animation off never sees a frame of it on the next page.
+ * Applies the stored motion and theme preferences before first paint, so a
+ * visitor who switched ambient animation off never sees a frame of it, and a
+ * chosen theme never flashes the other one.
  */
-const MOTION_BOOT = `(function(){try{var m=localStorage.getItem('pupa-motion');
-document.documentElement.setAttribute('data-motion',m==='off'?'off':'on')}catch(e){}})();`;
+const BOOT = `(function(){try{var d=document.documentElement;
+var m=localStorage.getItem('pupa-motion');d.setAttribute('data-motion',m==='off'?'off':'on');
+var t=localStorage.getItem('pupa-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t)}catch(e){}})();`;
 
 export default async function LocaleLayout({
   children,
@@ -83,7 +85,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={`${display.variable} ${body.variable} ${mono.variable}`}>
-        <script dangerouslySetInnerHTML={{ __html: MOTION_BOOT }} />
+        <script dangerouslySetInnerHTML={{ __html: BOOT }} />
         <a className="skip" href="#main">
           {t.skip}
         </a>
