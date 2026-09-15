@@ -18,8 +18,10 @@ export type Service = Localised<ServiceCopy> & {
 };
 
 /**
- * The six disciplines lettered on the company van, in the company's own words —
- * not a generic contractor menu. Each card carries a photograph of that work.
+ * The five disciplines lettered on the company van, in the company's own words.
+ *
+ * Medium voltage is deliberately absent: the company does not hold the
+ * certification for terminating MV cable, so the site must not offer it.
  */
 export const services: Service[] = [
   {
@@ -132,34 +134,6 @@ export const services: Service[] = [
         'De un punto de recarga a una electrolinera: la alimentación, el reparto y la medida que hay debajo — ahí está el trabajo de verdad.',
       specs: ['11 – 400 kW', 'Reparto dinámico de carga', 'Medida certificada MID'],
       alt: 'Cuadro de alimentación con pletinas marcadas U, V, W y N y cables de gran sección.',
-    },
-  },
-  {
-    id: 'middenspanning',
-    image: 'svc-middenspanning',
-    nl: {
-      tag: '10 / 20 kV',
-      name: 'Middenspanning & trafostations',
-      description:
-        'MS-eindsluitingen, schakelinstallaties en transformatorstations, inclusief afstemming met de netbeheerder.',
-      specs: ['10 kV / 20 kV', 'MS-eindsluitingen', 'Compactstations'],
-      alt: 'Middenspanningsveld met drie rode kabeleindsluitingen en T-connectoren.',
-    },
-    en: {
-      tag: '10 / 20 kV',
-      name: 'Medium voltage & substations',
-      description:
-        'MV cable terminations, switchgear and transformer substations, including coordination with the grid operator.',
-      specs: ['10 kV / 20 kV', 'MV terminations', 'Compact substations'],
-      alt: 'Medium-voltage panel with three red cable terminations and T-connectors.',
-    },
-    es: {
-      tag: '10 / 20 kV',
-      name: 'Media tensión y centros de transformación',
-      description:
-        'Terminaciones de cable de MT, aparamenta y centros de transformación, incluida la coordinación con la distribuidora.',
-      specs: ['10 kV / 20 kV', 'Terminaciones de MT', 'Centros compactos'],
-      alt: 'Celda de media tensión con tres terminaciones de cable rojas y conectores en T.',
     },
   },
   {

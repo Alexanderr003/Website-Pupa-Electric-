@@ -70,7 +70,7 @@ export const dossier: DossierPhase[] = [
   {
     date: '2026-03-18',
     crew: '2',
-    photos: ['work-06', 'work-04'],
+    photos: ['work-04'],
     nl: {
       title: 'Montage',
       summary:

@@ -9,7 +9,7 @@ export function Hero({ locale }: { locale: Locale }) {
   const t = getDictionary(locale);
 
   const meta = [
-    { k: t.hm1, v: 'tot 20 kV' },
+    { k: t.hm1, v: 'NEN 1010 / 3140' },
     { k: t.hm2, v: '5 – 250 kWh' },
     { k: t.hm3, v: '11 – 400 kW' },
     { k: t.hm4, v: 'tot 4000 A' },

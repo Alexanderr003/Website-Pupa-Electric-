@@ -10,6 +10,9 @@ export type Shot = Localised<ShotCopy> & { image: string };
 
 /**
  * Real photographs from real jobs, captioned with what is actually in frame.
+ * Captions stay strictly descriptive of what the lens caught — the company is
+ * not certified to terminate medium-voltage cable, so nothing here may read as
+ * an offer of that work.
  * Nothing is staged and nothing is a render: the whole argument of the page is
  * that the workmanship survives being looked at closely.
  */
@@ -40,15 +43,9 @@ export const gallery: Shot[] = [
   },
   {
     image: 'work-05',
-    nl: { caption: 'Transformator met MS-kabels in klemmen, over de hele rij gelijk gebogen.', alt: 'Groene transformator met rode middenspanningskabels in kabelklemmen.' },
-    en: { caption: 'Transformer with MV cables in clamps, bent alike across the whole run.', alt: 'Green transformer with red medium-voltage cables in cable clamps.' },
-    es: { caption: 'Transformador con cables de MT en abrazaderas, curvados igual en toda la fila.', alt: 'Transformador verde con cables rojos de media tensión en abrazaderas.' },
-  },
-  {
-    image: 'work-06',
-    nl: { caption: 'Montage in een middenspanningsveld, volgens NEN 3140 met aangewezen persoon.', alt: 'Monteur in signaalkleding werkt in een kast met rode MS-kabels en koperrails.' },
-    en: { caption: 'Working inside a medium-voltage panel, to NEN 3140 with a designated person.', alt: 'Engineer in high-visibility clothing working in a cabinet with red MV cables and copper bars.' },
-    es: { caption: 'Montaje en una celda de media tensión, según NEN 3140 con persona cualificada.', alt: 'Técnico con ropa de alta visibilidad trabajando entre cables rojos de MT y pletinas de cobre.' },
+    nl: { caption: 'Transformator met kabels in klemmen, over de hele rij gelijk gebogen.', alt: 'Groene transformator met rode kabels in kabelklemmen.' },
+    en: { caption: 'Transformer with cables in clamps, bent alike across the whole run.', alt: 'Green transformer with red cables in cable clamps.' },
+    es: { caption: 'Transformador con cables en abrazaderas, curvados igual en toda la fila.', alt: 'Transformador verde con cables rojos en abrazaderas.' },
   },
   {
     image: 'work-07',
@@ -64,8 +61,8 @@ export const gallery: Shot[] = [
   },
   {
     image: 'work-09',
-    nl: { caption: 'Kabelkelder: MS-kabels op klemmen met dezelfde buigradius over de hele rij.', alt: 'Kabelkelder met rode middenspanningskabels op zwarte kabelklemmen.' },
-    en: { caption: 'Cable basement: MV cables on clamps with the same bend radius throughout.', alt: 'Cable basement with red medium-voltage cables on black cable clamps.' },
-    es: { caption: 'Sótano de cables: cables de MT en abrazaderas con el mismo radio de curvatura.', alt: 'Sótano de cables con cables rojos de media tensión sobre abrazaderas negras.' },
+    nl: { caption: 'Kabelkelder: kabels op klemmen met dezelfde buigradius over de hele rij.', alt: 'Kabelkelder met rode kabels op zwarte kabelklemmen.' },
+    en: { caption: 'Cable basement: cables on clamps with the same bend radius throughout.', alt: 'Cable basement with red cables on black cable clamps.' },
+    es: { caption: 'Sótano de cables: cables en abrazaderas con el mismo radio de curvatura.', alt: 'Sótano de cables con cables rojos sobre abrazaderas negras.' },
   },
 ];

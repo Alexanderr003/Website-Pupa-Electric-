@@ -150,7 +150,6 @@ const SERVICES = [
   ['f608e2db-image.jpg', 'svc-licht-kracht', 'centre'],
   ['2ae12131-image.jpg', 'svc-opslag', 'centre'],
   ['dd25937b-image.jpg', 'svc-laadinfra', 'north'],
-  ['3d4f3f4a-image.jpg', 'svc-middenspanning', 'centre'],
   ['1e9fcb28-image.jpg', 'svc-service', 'centre'],
 ];
 for (const [src, name, position] of SERVICES) {
@@ -161,7 +160,7 @@ for (const [src, name, position] of SERVICES) {
 const WORK = [
   ['51ccead3-image.jpg', 'work-01'], ['85255fb6-image.jpg', 'work-02'],
   ['8e3b0c3c-image.jpg', 'work-03'], ['484874b2-image.jpg', 'work-04'],
-  ['1a4cffec-image.jpg', 'work-05'], ['571d0895-image.jpg', 'work-06'],
+  ['1a4cffec-image.jpg', 'work-05'],
   ['e5bcde7b-image.jpg', 'work-07'], ['126fb076-image.jpg', 'work-08'],
   ['bd625ee2-image.jpg', 'work-09'],
 ];

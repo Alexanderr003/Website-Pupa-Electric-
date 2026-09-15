@@ -6,7 +6,6 @@ export const serviceIds = [
   'licht-kracht',
   'opslag',
   'laadinfra',
-  'middenspanning',
   'service',
 ] as const;
 
