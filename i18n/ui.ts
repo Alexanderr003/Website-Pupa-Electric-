@@ -8,6 +8,7 @@ import type { Locale } from './config';
 const ui = {
   nl: {
     legalPrivacy: 'Privacy',
+    fAddress: 'Adres',
     themeAuto: 'Weergave: volgt je apparaat — klik voor licht',
     themeLight: 'Weergave: licht — klik voor donker',
     themeDark: 'Weergave: donker — klik om je apparaat te volgen',
@@ -87,6 +88,7 @@ const ui = {
   },
   en: {
     legalPrivacy: 'Privacy',
+    fAddress: 'Address',
     themeAuto: 'Appearance: follows your device — click for light',
     themeLight: 'Appearance: light — click for dark',
     themeDark: 'Appearance: dark — click to follow your device',
@@ -166,6 +168,7 @@ const ui = {
   },
   es: {
     legalPrivacy: 'Privacidad',
+    fAddress: 'Dirección',
     themeAuto: 'Apariencia: sigue a tu dispositivo — pulsa para claro',
     themeLight: 'Apariencia: claro — pulsa para oscuro',
     themeDark: 'Apariencia: oscuro — pulsa para seguir a tu dispositivo',

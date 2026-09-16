@@ -31,7 +31,13 @@ export function Footer({ locale }: { locale: Locale }) {
           </dd>
           <dt>{t.f2}</dt>
           <dd>
-            <Todo value={company.email} />
+            <a href={`mailto:${company.email}`}>{company.email}</a>
+          </dd>
+          <dt>{t.fAddress}</dt>
+          <dd>
+            {company.address.street}
+            <br />
+            {company.address.postalCode} {company.address.city}
           </dd>
           <dt>{t.f3}</dt>
           <dd>

@@ -23,6 +23,13 @@ export function LocalBusinessJsonLd({ locale }: { locale: Locale }) {
     url: absolute(`/${locale}`),
     image: absolute('/img/hero.webp'),
     knowsAbout: services.map((s) => s[locale].name),
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: company.address.street,
+      postalCode: company.address.postalCode,
+      addressLocality: company.address.city,
+      addressCountry: company.address.country,
+    },
     hasCredential: certifications
       .filter((c) => !isTodo(c.registration))
       .map((c) => ({ '@type': 'EducationalOccupationalCredential', name: c.name })),

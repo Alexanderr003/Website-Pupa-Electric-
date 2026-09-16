@@ -1,10 +1,19 @@
 import type { Localised } from './types';
 
+export type PostalAddress = {
+  street: string;
+  postalCode: string;
+  city: string;
+  /** ISO 3166-1 alpha-2, for schema.org */
+  country: string;
+};
+
 export type Company = {
   name: string;
-  /** every value below is a placeholder until the owner supplies the real one */
-  phone: string;
+  address: PostalAddress;
   email: string;
+  /** still a placeholder until the owner supplies it */
+  phone: string;
   whatsapp: string;
   serviceArea: string;
   kvk: string;
@@ -14,8 +23,14 @@ export type Company = {
 
 export const company: Company = {
   name: 'Pupa Elektrotechniek',
+  address: {
+    street: 'Mortelweg 12c',
+    postalCode: '6551 AE',
+    city: 'Weurt',
+    country: 'NL',
+  },
+  email: 'PupaElektrotechniek@hotmail.com',
   phone: 'TODO_PHONE',
-  email: 'TODO_EMAIL',
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP ?? 'TODO_WHATSAPP',
   serviceArea: 'TODO_REGIO',
   kvk: 'TODO_KVK',
