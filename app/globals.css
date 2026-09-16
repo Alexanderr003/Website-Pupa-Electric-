@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /*
- * Pupa Electric — "Zon & Zwart".
+ * Pupa Elektrotechniek — "Zon & Zwart".
  *
  * One accent only: solar yellow. Black is the ground, yellow is the single
  * chroma, and everything else is a warm neutral derived from them. Because the
@@ -271,30 +271,6 @@ img{display:block;max-width:100%}
 .van-copy .plate{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-family:var(--f-mono);
   font-size:var(--t-xs);letter-spacing:.14em;text-transform:uppercase;background:var(--zon);
   color:var(--op-zon);padding:7px 12px;border-radius:3px;font-weight:700}
-
-/* ===================== COMPARE ===================== */
-.cmp{position:relative;border:1px solid var(--lijn);border-radius:6px;overflow:hidden;background:#050506;
-  touch-action:manipulation;cursor:ew-resize;aspect-ratio:25/17;box-shadow:var(--schaduw)}
-.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.cmp-over{position:absolute;inset:0;clip-path:inset(0 0 0 var(--pos,52%))}
-.cmp-div{position:absolute;top:0;bottom:0;left:var(--pos,52%);width:2px;background:var(--zon);
-  transform:translateX(-1px);pointer-events:none;box-shadow:0 0 18px 2px rgba(255,210,0,.45)}
-.cmp-div::after{content:"";position:absolute;top:50%;left:50%;width:34px;height:34px;border-radius:50%;
-  background:var(--zon);transform:translate(-50%,-50%);box-shadow:0 0 22px rgba(255,210,0,.5)}
-.cmp-tag{position:absolute;top:12px;font-family:var(--f-mono);font-size:var(--t-xs);letter-spacing:.16em;
-  text-transform:uppercase;padding:6px 11px;border-radius:2px;pointer-events:none;font-weight:700;z-index:3}
-.cmp-tag.a{left:12px;background:rgba(10,10,11,.86);color:#E7E2D6;border:1px solid rgba(228,87,63,.6)}
-.cmp-tag.b{right:12px;background:var(--zon);color:var(--op-zon)}
-.cmp-ctl{display:flex;align-items:center;gap:16px;margin-top:18px;flex-wrap:wrap}
-.cmp-ctl label{font-family:var(--f-mono);font-size:var(--t-xs);color:var(--grijs);letter-spacing:.12em;
-  text-transform:uppercase;flex:none}
-input[type=range]{flex:1 1 220px;min-width:180px;height:36px;background:transparent;appearance:none;margin:0;cursor:ew-resize}
-input[type=range]::-webkit-slider-runnable-track{height:2px;background:var(--lijn2)}
-input[type=range]::-moz-range-track{height:2px;background:var(--lijn2)}
-input[type=range]::-webkit-slider-thumb{appearance:none;width:22px;height:22px;margin-top:-10px;border-radius:50%;
-  background:var(--zon);border:2px solid var(--nacht);box-shadow:0 0 14px rgba(255,210,0,.5)}
-input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--zon);
-  border:2px solid var(--nacht);box-shadow:0 0 14px rgba(255,210,0,.5)}
 
 /* ===================== PRICE ===================== */
 .tbl-scroll{overflow-x:auto;border:1px solid var(--lijn);border-radius:6px;background:var(--paneel)}
