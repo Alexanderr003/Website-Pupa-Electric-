@@ -39,6 +39,8 @@ export const company: Company = {
     nl: 'Erkend elektrotechnisch installatiebedrijf · Nederland',
     en: 'Certified electrical installation company · Netherlands',
     es: 'Empresa instaladora eléctrica autorizada · Países Bajos',
+    fr: 'Entreprise d’installation électrique agréée · Pays-Bas',
+    pt: 'Empresa instaladora elétrica acreditada · Países Baixos',
   },
 };
 

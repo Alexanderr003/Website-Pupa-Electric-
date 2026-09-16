@@ -1,8 +1,8 @@
 import type { Locale } from './config';
 
 /**
- * `nl` is the source of truth. `en` and `es` are checked against it at compile
- * time by the Record<Locale, Dictionary> annotation below: a missing or
+ * `nl` is the source of truth. Every other locale is checked against it at
+ * compile time by the Record<Locale, Dictionary> annotation below: a missing or
  * misspelled key fails `pnpm typecheck`, so a locale can never silently drift.
  */
 const dict = {
@@ -132,6 +132,92 @@ const dict = {
       note1:"Nota de prototipo: esto es una muestra de diseño. En la web construida será un formulario de cuatro pasos con validación Zod y una Server Action; todos los datos de empresa de abajo son marcadores TODO.",
       ftrtag:"Empresa instaladora eléctrica autorizada · Países Bajos",
       f1:"Teléfono", f2:"Correo", f3:"Zona de actuación", fab:"WhatsApp"
+    },
+    fr: {
+      skip:"Aller au contenu", brandsub:"Entreprise d\u2019installation \u00e9lectrique agr\u00e9\u00e9e", mainmenu:"Menu principal",
+      nav1:"Prestations", nav2:"Saldering 2027", nav3:"Dossier de chantier", nav4:"Prix", nav5:"Certificats",
+      cta1:"Demander un devis", cta2:"Demandez un devis", cta3:"Voir un dossier de chantier",
+      motionLabel:"Mettre l\u2019animation en pause", motionResume:"Reprendre l\u2019animation",
+      eyebrow:"Tableaux de distribution \u00b7 Stockage \u00b7 Recharge",
+      h1a:"Du tableau g\u00e9n\u00e9ral \u00e0 la borne.", h1b:"Un installateur. Un dossier.",
+      heroalt:"Rang\u00e9e d\u2019interrupteurs-fusibles NH dans un tableau, avec des cosses serties en dessous.",
+      lede:"Pupa Elektrotechniek construit et entretient la partie lourde de l\u2019installation : tableaux g\u00e9n\u00e9raux, jeux de barres, installations d\u2019\u00e9clairage et de force, stockage d\u2019\u00e9nergie et infrastructure de recharge. Chaque raccordement est serti, serr\u00e9 au couple, rep\u00e9r\u00e9 et consign\u00e9 \u2014 le dossier vous revient \u00e0 la r\u00e9ception.",
+      hm1:"Norme", hm2:"Stockage", hm3:"Puissance de recharge", hm4:"Distribution",
+      g1:"PRESTATIONS", g2:"STOCKAGE", g3:"DOSSIER", g4:"M\u00c9TIER", g5:"PRIX", g6:"AGR\u00c9\u00c9",
+      eb1:"Ce que nous raccordons", h2a:"Cinq disciplines, une seule \u00e9quipe qui les ma\u00eetrise toutes.",
+      p1:"Nous nommons nos sp\u00e9cialit\u00e9s, car c\u2019est ce que vous cherchez. D\u2019une borne de recharge unique \u00e0 un tableau g\u00e9n\u00e9ral de 4000 A \u2014 la m\u00eame \u00e9quipe, les m\u00eames appareils de mesure, le m\u00eame dossier.",
+      eb2:"La compensation prend fin le 1er janvier 2027",
+      h2b:"Votre surplus vaudra moiti\u00e9 moins. Sauf si vous le stockez.",
+      p2:"\u00c0 partir de 2027, le r\u00e9gime n\u00e9erlandais de compensation dispara\u00eet ; pendant la transition s\u2019applique un tarif de rachat minimum l\u00e9gal de 50 % du prix de fourniture nu. Dans le m\u00eame temps, le r\u00e9seau sature. Le stockage d\u00e9place votre surplus de midi vers la pointe du soir \u2014 et garde votre raccordement hors de la congestion.",
+      bn1:"kWh de surplus entre 9 h et 15 h", bn2:"d\u2019autoconsommation avec 60 kWh de stockage",
+      bn3:"tarif de rachat l\u00e9gal \u00e0 partir de 2027",
+      lg1:"Surplus vers la batterie", lg2:"Consomm\u00e9 depuis la batterie", lg3:"Consomm\u00e9 depuis le r\u00e9seau",
+      chartdesc:"Diagramme en barres sur 24 heures : le surplus entre 9 h et 15 h charge la batterie ; entre 17 h et 20 h, cette m\u00eame \u00e9nergie est reconsomm\u00e9e.",
+      cap1:"Exemple : toiture d\u2019entreprise de 30 kWc avec 60 kWh de stockage, jour ouvr\u00e9 en mai. Valeurs indicatives \u2014 votre profil r\u00e9el est mesur\u00e9 lors de la visite pr\u00e9alable.",
+      eb3:"La transparence comme fichier, pas comme promesse",
+      h2c:"Le dossier de chantier : chaque phase photographi\u00e9e, mesur\u00e9e et sign\u00e9e.",
+      p3:"\u00c0 chaque installation, nous consignons ce que nous avons fait, quand, qui \u00e9tait l\u00e0 et selon quelle norme nous l\u2019avons contr\u00f4l\u00e9. \u00c0 la r\u00e9ception, vous recevez le dossier complet \u2014 pas seulement une facture.",
+      cap2:"Dossier d\u2019un tableau g\u00e9n\u00e9ral de 3200 A avec jeu de barres. Client et site sont omis ; le reste est exactement ce que le client re\u00e7oit.", crew:"\u00c9quipe",
+      eb4:"Le travail de pr\u00e8s", h2d:"Un travail soign\u00e9 supporte le gros plan.",
+      p4:"Des photos de nos propres chantiers, chacune l\u00e9gend\u00e9e par ce que vous regardez exactement. Notez les rep\u00e8res de couple sur les boulons, les phases \u00e9tiquet\u00e9es et le rayon de courbure identique des c\u00e2bles \u2014 c\u2019est l\u00e0 que le soin devient visible.",
+      cap3:"Toutes les photos proviennent de nos propres chantiers. Clients et sites sont omis.",
+      eb5:"Indication de prix ouverte", h2e:"Nous d\u00e9taillons le prix avant que vous ayez \u00e0 le demander.",
+      p5:"\u00ab Contactez-nous pour un prix \u00bb n\u2019est pas une r\u00e9ponse. Voici ce que co\u00fbte chez nous une batterie domestique courante, ligne par ligne \u2014 y compris ce qui n\u2019y est pas.",
+      pcap:"Indication \u2014 batterie domestique 15 kWh, coupl\u00e9e en AC, triphas\u00e9e \u00b7 montants hors TVA",
+      pth1:"Poste", pth2:"Montant",
+      cap4:"Il s\u2019agit d\u2019une indication fond\u00e9e sur des chantiers ant\u00e9rieurs, pas d\u2019un devis. Non compris : renforcement du raccordement, remplacement du tableau, travaux de saign\u00e9e et de per\u00e7age, et travaux suppl\u00e9mentaires d\u00e9couverts \u00e0 l\u2019inspection.",
+      eb6:"D\u00e9montrable, pas seulement affirm\u00e9", h2f:"Chaque agr\u00e9ment avec son num\u00e9ro, sa validit\u00e9 et son registre.",
+      p6:"Un logo sur un site ne dit rien. C\u2019est pourquoi chaque agr\u00e9ment porte son num\u00e9ro d\u2019enregistrement et sa date d\u2019\u00e9ch\u00e9ance, afin que vous puissiez le v\u00e9rifier vous-m\u00eame au registre public.",
+      certnr:"N\u00b0 reg.", certval:"Valable jusqu\u2019au",
+      h2g:"Dites-nous ce dont vous avez besoin. Un devis argument\u00e9 vous parvient sous deux jours ouvr\u00e9s.",
+      p7:"Quatre \u00e9tapes : quoi, o\u00f9, quand et comment vous joindre. Sans engagement ni discours commercial \u2014 mais avec un calcul que vous pouvez soumettre \u00e0 un tiers.",
+      cta4:"Demander un devis", cta5:"Appelez-nous",
+      note1:"Note de prototype : ceci est un exemple de conception. Dans le site construit, il s\u2019agit d\u2019un formulaire en quatre \u00e9tapes avec validation Zod et une Server Action ; toutes les donn\u00e9es d\u2019entreprise ci-dessous sont des marqueurs TODO.",
+      ftrtag:"Entreprise d\u2019installation \u00e9lectrique agr\u00e9\u00e9e \u00b7 Pays-Bas",
+      f1:"T\u00e9l\u00e9phone", f2:"E-mail", f3:"Zone d\u2019intervention", fab:"WhatsApp"
+    },
+    pt: {
+      skip:"Ir para o conte\u00fado", brandsub:"Empresa instaladora el\u00e9trica acreditada", mainmenu:"Menu principal",
+      nav1:"Servi\u00e7os", nav2:"Saldering 2027", nav3:"Processo de obra", nav4:"Pre\u00e7o", nav5:"Certificados",
+      cta1:"Pedir or\u00e7amento", cta2:"Pe\u00e7a um or\u00e7amento", cta3:"Ver um processo de obra",
+      motionLabel:"Pausar a anima\u00e7\u00e3o", motionResume:"Retomar a anima\u00e7\u00e3o",
+      eyebrow:"Quadros de distribui\u00e7\u00e3o \u00b7 Armazenamento \u00b7 Carregamento",
+      h1a:"Do quadro geral ao carregador.", h1b:"Um instalador. Um processo.",
+      heroalt:"Fila de seccionadores NH num quadro, com terminais cravados por baixo.",
+      lede:"A Pupa Elektrotechniek constr\u00f3i e mant\u00e9m a parte pesada da instala\u00e7\u00e3o: quadros gerais, barramentos, instala\u00e7\u00f5es de ilumina\u00e7\u00e3o e for\u00e7a, armazenamento de energia e infraestrutura de carregamento. Cada liga\u00e7\u00e3o \u00e9 cravada, apertada ao bin\u00e1rio, marcada e registada \u2014 o processo \u00e9 seu na entrega.",
+      hm1:"Norma", hm2:"Armazenamento", hm3:"Pot\u00eancia de carga", hm4:"Distribui\u00e7\u00e3o",
+      g1:"SERVI\u00c7OS", g2:"ARMAZENAMENTO", g3:"PROCESSO", g4:"OF\u00cdCIO", g5:"PRE\u00c7O", g6:"ACREDITADA",
+      eb1:"O que ligamos", h2a:"Cinco disciplinas, uma s\u00f3 equipa que as domina todas.",
+      p1:"Damos nome \u00e0s nossas especialidades, porque \u00e9 isso que procura. De um \u00fanico ponto de carregamento a um quadro geral de 4000 A \u2014 a mesma equipa, os mesmos instrumentos, o mesmo processo.",
+      eb2:"A compensa\u00e7\u00e3o termina a 1 de janeiro de 2027",
+      h2b:"O seu excedente vai valer metade. A n\u00e3o ser que o guarde.",
+      p2:"A partir de 2027 acaba o regime neerland\u00eas de compensa\u00e7\u00e3o; no per\u00edodo de transi\u00e7\u00e3o vigora uma remunera\u00e7\u00e3o m\u00ednima legal de 50 % da tarifa de fornecimento em bruto. Ao mesmo tempo, a rede est\u00e1 a encher. O armazenamento desloca o excedente do meio-dia para o pico da noite \u2014 e mant\u00e9m a sua liga\u00e7\u00e3o fora do congestionamento.",
+      bn1:"kWh de excedente entre as 9 e as 15 h", bn2:"de autoconsumo com 60 kWh de armazenamento",
+      bn3:"remunera\u00e7\u00e3o legal a partir de 2027",
+      lg1:"Excedente para a bateria", lg2:"Consumo a partir da bateria", lg3:"Consumo da rede",
+      chartdesc:"Gr\u00e1fico de barras ao longo de 24 horas: o excedente entre as 9 e as 15 h carrega a bateria; entre as 17 e as 20 h essa mesma energia volta a ser consumida.",
+      cap1:"Exemplo: cobertura industrial de 30 kWp com 60 kWh de armazenamento, dia \u00fatil de maio. Valores ilustrativos \u2014 o seu perfil real \u00e9 medido na visita pr\u00e9via.",
+      eb3:"Transpar\u00eancia como ficheiro, n\u00e3o como promessa",
+      h2c:"O processo de obra: cada fase fotografada, medida e assinada.",
+      p3:"Em cada instala\u00e7\u00e3o registamos o que fizemos, quando, quem esteve presente e contra que norma verific\u00e1mos. Na entrega recebe o processo completo \u2014 n\u00e3o apenas uma fatura.",
+      cap2:"Processo de um quadro geral de 3200 A com barramento. Cliente e local foram omitidos; o resto \u00e9 exatamente o que o cliente recebe.", crew:"Equipa",
+      eb4:"O trabalho de perto", h2d:"O trabalho cuidado aguenta um grande plano.",
+      p4:"Fotografias de trabalho pr\u00f3prio, cada uma legendada com o que est\u00e1 realmente a ver. Repare nas marcas de bin\u00e1rio nos parafusos, nas fases etiquetadas e no raio de curvatura igual dos cabos \u2014 \u00e9 a\u00ed que o cuidado se torna vis\u00edvel.",
+      cap3:"Todas as fotografias s\u00e3o de obras pr\u00f3prias. Clientes e locais foram omitidos.",
+      eb5:"Indica\u00e7\u00e3o de pre\u00e7o aberta", h2e:"Desmontamos o pre\u00e7o antes de ter de o pedir.",
+      p5:"\u201cContacte-nos para saber o pre\u00e7o\u201d n\u00e3o \u00e9 uma resposta. Isto \u00e9 o que custa connosco uma bateria dom\u00e9stica corrente, linha a linha \u2014 incluindo o que n\u00e3o est\u00e1 inclu\u00eddo.",
+      pcap:"Indica\u00e7\u00e3o \u2014 bateria dom\u00e9stica 15 kWh, acoplada em AC, trif\u00e1sica \u00b7 valores sem IVA",
+      pth1:"Rubrica", pth2:"Valor",
+      cap4:"\u00c9 uma indica\u00e7\u00e3o baseada em obras anteriores, n\u00e3o um or\u00e7amento. N\u00e3o inclui: refor\u00e7o da pot\u00eancia contratada, substitui\u00e7\u00e3o do quadro, trabalhos de rou\u00e7as e demoli\u00e7\u00e3o, nem trabalhos adicionais detetados na inspe\u00e7\u00e3o.",
+      eb6:"Demonstr\u00e1vel, n\u00e3o apenas afirmado", h2f:"Cada acredita\u00e7\u00e3o com n\u00famero, validade e registo.",
+      p6:"Um log\u00f3tipo num site n\u00e3o diz nada. Por isso cada acredita\u00e7\u00e3o traz o seu n\u00famero de registo e a data de validade, para que possa confirm\u00e1-la por si no registo p\u00fablico.",
+      certnr:"N.\u00ba reg.", certval:"V\u00e1lido at\u00e9",
+      h2g:"Diga-nos o que precisa. Em dois dias \u00fateis tem um or\u00e7amento fundamentado.",
+      p7:"Quatro passos: o qu\u00ea, onde, quando e como o podemos contactar. Sem compromisso e sem discurso de vendas \u2014 com um c\u00e1lculo que pode mostrar a terceiros.",
+      cta4:"Pedir or\u00e7amento", cta5:"Ligue-nos",
+      note1:"Nota de prot\u00f3tipo: isto \u00e9 uma amostra de design. No site constru\u00eddo \u00e9 um formul\u00e1rio de quatro passos com valida\u00e7\u00e3o Zod e uma Server Action; todos os dados da empresa abaixo s\u00e3o marcadores TODO.",
+      ftrtag:"Empresa instaladora el\u00e9trica acreditada \u00b7 Pa\u00edses Baixos",
+      f1:"Telefone", f2:"E-mail", f3:"\u00c1rea de atua\u00e7\u00e3o", fab:"WhatsApp"
     }
   };
 

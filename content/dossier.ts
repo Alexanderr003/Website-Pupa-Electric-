@@ -43,6 +43,18 @@ export const dossier: DossierPhase[] = [
         'Trazado y entrada de cable registrados, potencia de acometida y poder de cortocircuito solicitados a la distribuidora, y sótano de cables medido.',
       norm: 'Potencia y poder de cortocircuito confirmados por escrito',
     },
+    fr: {
+      title: 'Visite et relevés',
+      summary:
+        'Tracé et pénétration de câble relevés, puissance de raccordement et pouvoir de court-circuit demandés au gestionnaire de réseau, et cave à câbles existante mesurée.',
+      norm: 'Puissance de raccordement et pouvoir de court-circuit confirmés par écrit',
+    },
+    pt: {
+      title: 'Visita prévia e levantamento',
+      summary:
+        'Traçado e entrada de cabo registados, potência de ligação e poder de corte pedidos ao operador de rede, e cave de cabos existente medida.',
+      norm: 'Potência de ligação e poder de corte confirmados por escrito',
+    },
   },
   {
     date: '2026-03-06',
@@ -65,6 +77,18 @@ export const dossier: DossierPhase[] = [
       summary:
         'Dimensionado de pletinas, resistencia al cortocircuito y selectividad calculados; campos numerados de antemano.',
       norm: 'NEN 1010 parte 4 — protección contra sobreintensidad',
+    },
+    fr: {
+      title: 'Étude et calcul des barres',
+      summary:
+        'Dimensionnement des barres, tenue au court-circuit et sélectivité calculés ; champs numérotés à l’avance pour que le tableau soit juste dès le papier.',
+      norm: 'NEN 1010 partie 4 — protection contre les surintensités',
+    },
+    pt: {
+      title: 'Projeto e cálculo do barramento',
+      summary:
+        'Dimensionamento das barras, resistência ao curto-circuito e seletividade calculados; campos numerados de antemão para o quadro estar certo já no papel.',
+      norm: 'NEN 1010 parte 4 — proteção contra sobreintensidades',
     },
   },
   {
@@ -89,6 +113,18 @@ export const dossier: DossierPhase[] = [
         'Embarrado montado, terminales prensados con la matriz correcta, tornillos apretados a par y marcados en el acto.',
       norm: 'Pares de apriete registrados y marcados a la vista',
     },
+    fr: {
+      title: 'Montage',
+      summary:
+        'Jeu de barres monté, cosses serties avec la matrice adaptée, boulons serrés au couple et repérés dans la foulée.',
+      norm: 'Couples de serrage consignés et repérés visiblement',
+    },
+    pt: {
+      title: 'Montagem',
+      summary:
+        'Barramento montado, terminais cravados com a matriz correta, parafusos apertados ao binário e marcados no momento.',
+      norm: 'Binários de aperto registados e marcados à vista',
+    },
   },
   {
     date: '2026-03-19',
@@ -112,6 +148,18 @@ export const dossier: DossierPhase[] = [
         'Resistencia de aislamiento, puesta a tierra y tiempos de disparo medidos; fases verificadas y rotuladas antes de dar tensión.',
       norm: 'NEN 1010 — informe de medición emitido',
     },
+    fr: {
+      title: 'Contrôle et mise en service',
+      summary:
+        'Résistance d’isolement, résistance de terre et temps de déclenchement mesurés ; phases vérifiées et étiquetées avant toute mise sous tension.',
+      norm: 'NEN 1010 — rapport de mesures établi',
+    },
+    pt: {
+      title: 'Inspeção e entrada em serviço',
+      summary:
+        'Resistência de isolamento, resistência de terra e tempos de disparo medidos; fases verificadas e etiquetadas antes de dar tensão.',
+      norm: 'NEN 1010 — relatório de medição emitido',
+    },
   },
   {
     date: '2026-03-20',
@@ -134,6 +182,18 @@ export const dossier: DossierPhase[] = [
       summary:
         'Esquema, informe de medición, fotos de cada fase, certificados de garantía e instrucciones entregados y repasados in situ.',
       norm: 'Expediente firmado por cliente y técnico',
+    },
+    fr: {
+      title: 'Réception et dossier',
+      summary:
+        'Schéma, rapport de mesures, photos de chaque phase, certificats de garantie et notice d’exploitation remis et parcourus sur place.',
+      norm: 'Dossier signé par le client et le monteur',
+    },
+    pt: {
+      title: 'Entrega e processo',
+      summary:
+        'Esquema, relatório de medição, fotografias de cada fase, certificados de garantia e instruções de operação entregues e percorridos no local.',
+      norm: 'Processo assinado pelo cliente e pelo técnico',
     },
   },
 ];

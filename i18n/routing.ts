@@ -10,9 +10,9 @@ export const pageIds = ['quote', 'privacy', 'terms'] as const;
 export type PageId = (typeof pageIds)[number];
 
 export const slugs: Record<PageId, Record<Locale, string>> = {
-  quote: { nl: 'offerte', en: 'quote', es: 'presupuesto' },
-  privacy: { nl: 'privacy', en: 'privacy', es: 'privacidad' },
-  terms: { nl: 'algemene-voorwaarden', en: 'terms', es: 'condiciones' },
+  quote: { nl: 'offerte', en: 'quote', es: 'presupuesto', fr: 'devis', pt: 'orcamento' },
+  privacy: { nl: 'privacy', en: 'privacy', es: 'privacidad', fr: 'confidentialite', pt: 'privacidade' },
+  terms: { nl: 'algemene-voorwaarden', en: 'terms', es: 'condiciones', fr: 'conditions', pt: 'condicoes' },
 };
 
 export function slugFor(page: PageId, locale: Locale): string {

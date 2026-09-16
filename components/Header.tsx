@@ -61,7 +61,7 @@ export function Header({ locale }: { locale: Locale }) {
             labels={{ auto: t.themeAuto, light: t.themeLight, dark: t.themeDark }}
           />
           <MotionToggle pauseLabel={t.motionLabel} resumeLabel={t.motionResume} />
-          <LocaleSwitcher current={locale} label="Taal / Language / Idioma" />
+          <LocaleSwitcher current={locale} label={t.langLabel} />
           <Link className="btn btn-p" href={hrefFor('quote', locale)}>
             {t.cta1}
           </Link>

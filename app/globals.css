@@ -104,12 +104,37 @@ img{display:block;max-width:100%}
 .nav a:hover{color:var(--wit)}
 .nav a:hover::after,.nav a:focus-visible::after{transform:scaleX(1)}
 .tools{display:flex;gap:8px;align-items:center}
-.langs{display:flex;gap:2px;border:1px solid var(--lijn);border-radius:4px;padding:2px;background:var(--paneel)}
-.lang{font-family:var(--f-mono);font-size:var(--t-xs);text-transform:uppercase;letter-spacing:.09em;
-  background:none;border:0;color:var(--grijs2);padding:7px 9px;border-radius:2px;cursor:pointer;
-  min-height:26px;font-weight:600;transition:color .15s ease,background-color .15s ease}
-.lang:hover{color:var(--wit)}
-.lang[aria-pressed="true"]{background:var(--zon);color:var(--op-zon)}
+.langs{position:relative}
+.lang-btn{display:inline-flex;align-items:center;gap:7px;height:38px;padding:0 10px;border-radius:4px;
+  border:1px solid var(--lijn);background:var(--paneel);color:var(--grijs);cursor:pointer;
+  transition:color .15s ease,border-color .15s ease}
+.lang-btn:hover{color:var(--zon-ink);border-color:var(--lijn2)}
+.lang-btn[aria-expanded="true"]{color:var(--zon-ink);border-color:var(--zon)}
+.lang-caret{transition:transform .18s cubic-bezier(.22,1,.36,1)}
+.lang-btn[aria-expanded="true"] .lang-caret{transform:rotate(180deg)}
+.lang-code{font-family:var(--f-mono);font-size:var(--t-xs);text-transform:uppercase;letter-spacing:.09em;
+  font-weight:700}
+
+/* Always laid out, only hidden — so its width can be measured before it opens
+   and the panel can be clamped inside the viewport. */
+.lang-panel{position:absolute;top:calc(100% + 7px);z-index:20;width:max-content;min-width:186px;
+  max-width:calc(100vw - 24px);
+  border:1px solid var(--lijn2);border-radius:5px;background:var(--paneel);padding:5px;
+  box-shadow:var(--schaduw);
+  visibility:hidden;opacity:0;transform:translateY(-5px);pointer-events:none;
+  transition:opacity .16s ease,transform .16s cubic-bezier(.22,1,.36,1),visibility 0s linear .16s}
+.lang-panel[data-open="true"]{visibility:visible;opacity:1;transform:none;pointer-events:auto;
+  transition-delay:0s}
+.lang-panel ul{list-style:none;margin:0;padding:0}
+.lang{display:flex;align-items:center;gap:10px;width:100%;min-height:38px;padding:0 10px;border-radius:3px;
+  color:var(--grijs);text-decoration:none;
+  transition:color .15s ease,background-color .15s ease}
+.lang .lang-code{color:var(--grijs2);width:2.1em;flex:none;transition:color .15s ease}
+.lang-name{font-size:var(--t-sm)}
+.lang:hover,.lang:focus-visible{background:var(--paneel3);color:var(--wit)}
+.lang:hover .lang-code,.lang:focus-visible .lang-code{color:var(--zon-ink)}
+.lang[aria-current="true"]{background:var(--zon);color:var(--op-zon)}
+.lang[aria-current="true"] .lang-code{color:var(--op-zon)}
 .iconbtn{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:4px;
   border:1px solid var(--lijn);background:var(--paneel);color:var(--grijs);cursor:pointer;
   transition:color .15s ease,border-color .15s ease}
@@ -356,6 +381,7 @@ td small{display:block;color:var(--grijs2);font-size:var(--t-xs);margin-top:4px;
   .hero-img{transform:scale(1.04)}
   *{transition-duration:.01ms!important;scroll-behavior:auto!important}
   .svc:hover,.btn:hover,.fab:hover{transform:none}
+  .lang-panel{transition:none}
 }
 
 /* ===================== FORM ===================== */

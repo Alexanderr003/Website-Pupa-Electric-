@@ -3,11 +3,12 @@ import type { Locale } from './config';
 /**
  * Strings added on top of the ported marketing copy: the quote flow, the legal
  * pages and a few chrome labels. Same parity guarantee as `dictionaries.ts` —
- * `nl` defines the shape, the other two must match it exactly.
+ * `nl` defines the shape, every other locale must match it exactly.
  */
 const ui = {
   nl: {
     legalPrivacy: 'Privacy',
+    langLabel: 'Taal',
     fAddress: 'Adres',
     themeAuto: 'Weergave: volgt je apparaat — klik voor licht',
     themeLight: 'Weergave: licht — klik voor donker',
@@ -88,6 +89,7 @@ const ui = {
   },
   en: {
     legalPrivacy: 'Privacy',
+    langLabel: 'Language',
     fAddress: 'Address',
     themeAuto: 'Appearance: follows your device — click for light',
     themeLight: 'Appearance: light — click for dark',
@@ -168,6 +170,7 @@ const ui = {
   },
   es: {
     legalPrivacy: 'Privacidad',
+    langLabel: 'Idioma',
     fAddress: 'Dirección',
     themeAuto: 'Apariencia: sigue a tu dispositivo — pulsa para claro',
     themeLight: 'Apariencia: claro — pulsa para oscuro',
@@ -245,6 +248,168 @@ const ui = {
     termsTitle: 'Condiciones generales',
     legalDraft:
       'Este texto es un borrador. Que lo revise un jurista antes de publicar la web; las partes que requieren datos de empresa están marcadas como TODO.',
+  },
+  fr: {
+    legalPrivacy: 'Confidentialité',
+    langLabel: 'Langue',
+    fAddress: 'Adresse',
+    themeAuto: 'Affichage : suit votre appareil — cliquez pour le clair',
+    themeLight: 'Affichage : clair — cliquez pour le sombre',
+    themeDark: 'Affichage : sombre — cliquez pour suivre votre appareil',
+    vanAlt: 'La camionnette de Pupa Elektrotechniek à côté d’une rangée d’armoires de batteries sur une zone industrielle.',
+    vanTitle: 'Une camionnette, une équipe, de la première mesure au contrôle final.',
+    vanBody:
+      'Nous ne sous-traitons pas le gros œuvre. Les monteurs qui montent les jeux de barres mesurent aussi l’installation et signent le dossier. C’est pourquoi, en cas de panne, nous savons déjà où regarder.',
+    vanServices: 'Électricité · Éclairage et force · Stockage · Recharge · Service',
+    legalTerms: 'Conditions générales',
+    whatsappIntro: 'Bonjour, j’ai une question au sujet d’une installation.',
+
+    qTitle: 'Demander un devis',
+    qLede:
+      'Quatre étapes courtes. Plus vos réponses sont concrètes, plus le calcul que vous recevez sera précis.',
+    qStep: 'Étape',
+    qOf: 'sur',
+    s1Title: 'De quoi avez-vous besoin ?',
+    s2Title: 'Votre situation',
+    s3Title: 'Précisions',
+    s4Title: 'Comment vous joindre ?',
+
+    fService: 'Prestation',
+    fCustomer: 'Vous demandez en tant que',
+    fResidential: 'Particulier',
+    fBusiness: 'Professionnel',
+    fConnection: 'Raccordement actuel',
+    fConnUnknown: 'Je ne sais pas',
+    fTimeline: 'Échéance',
+    fAsap: 'Dès que possible',
+    f1to3: 'Sous 1 à 3 mois',
+    f3to6: 'Sous 3 à 6 mois',
+    fOrienting: 'Je me renseigne',
+    fMessage: 'Précisions',
+    fMessageHint: 'Par exemple : surface de toiture, nombre de points de charge, onduleur existant…',
+    fName: 'Nom',
+    fEmail: 'Adresse e-mail',
+    fPhone: 'Téléphone',
+    fPostcode: 'Code postal',
+    fHouseNumber: 'Numéro',
+    fCompany: 'Raison sociale',
+    fPreferred: 'Contact de préférence par',
+    fByPhone: 'Téléphone',
+    fByEmail: 'E-mail',
+    fByWhatsapp: 'WhatsApp',
+    fConsent: 'J’accepte que Pupa Elektrotechniek utilise mes données pour répondre à cette demande.',
+    fOptional: 'facultatif',
+
+    back: 'Retour',
+    next: 'Suivant',
+    submit: 'Envoyer la demande',
+    submitting: 'Envoi de la demande…',
+    reviewTitle: 'Vérifiez votre demande',
+    edit: 'Modifier',
+
+    errRequired: 'Ce champ est obligatoire.',
+    errEmail: 'Saisissez une adresse e-mail valide.',
+    errPhone: 'Saisissez un numéro de téléphone valide.',
+    errPostcode: 'Saisissez un code postal valide, par exemple 2011 AB.',
+    errConsent: 'Sans votre accord, nous ne pouvons pas traiter la demande.',
+    errCompany: 'Indiquez la raison sociale.',
+    errorSummary: 'Il manque encore quelque chose. Vérifiez les champs signalés.',
+    errorTitle: 'L’envoi a échoué',
+    errorBody: 'Réessayez, ou appelez-nous directement — cela marche toujours.',
+
+    successTitle: 'Demande reçue',
+    successBody:
+      'Nous revenons vers vous sous deux jours ouvrés avec un calcul argumenté. Pas un tarif catalogue : nous chiffrons votre situation.',
+    successRef: 'Référence',
+    backHome: 'Retour à la page d’accueil',
+    devNotice:
+      'Mode développement : aucune RESEND_API_KEY n’est configurée, la demande a donc été écrite dans le journal du serveur au lieu d’être envoyée par e-mail.',
+
+    privacyTitle: 'Déclaration de confidentialité',
+    termsTitle: 'Conditions générales',
+    legalDraft:
+      'Ce texte est un projet. Faites-le relire par un juriste avant la mise en ligne ; les parties qui demandent des données d’entreprise sont marquées TODO.',
+  },
+  pt: {
+    legalPrivacy: 'Privacidade',
+    langLabel: 'Idioma',
+    fAddress: 'Morada',
+    themeAuto: 'Aspeto: segue o seu dispositivo — clique para claro',
+    themeLight: 'Aspeto: claro — clique para escuro',
+    themeDark: 'Aspeto: escuro — clique para seguir o seu dispositivo',
+    vanAlt: 'A carrinha da Pupa Elektrotechniek junto a uma fila de armários de baterias numa zona industrial.',
+    vanTitle: 'Uma carrinha, uma equipa, da primeira medição à inspeção final.',
+    vanBody:
+      'Não subcontratamos o trabalho pesado. Os mesmos técnicos que montam os barramentos medem a instalação e assinam o processo. Por isso, quando algo dispara, já sabemos onde procurar.',
+    vanServices: 'Eletricidade · Luz e força · Armazenamento · Carregamento · Serviço',
+    legalTerms: 'Condições gerais',
+    whatsappIntro: 'Bom dia, tenho uma questão sobre uma instalação.',
+
+    qTitle: 'Pedir orçamento',
+    qLede:
+      'Quatro passos curtos. Quanto mais concretas forem as respostas, mais rigoroso será o cálculo que recebe.',
+    qStep: 'Passo',
+    qOf: 'de',
+    s1Title: 'Do que precisa?',
+    s2Title: 'A sua situação',
+    s3Title: 'Detalhes',
+    s4Title: 'Como o contactamos?',
+
+    fService: 'Serviço',
+    fCustomer: 'Pede como',
+    fResidential: 'Particular',
+    fBusiness: 'Empresa',
+    fConnection: 'Ligação atual',
+    fConnUnknown: 'Não sei',
+    fTimeline: 'Prazo',
+    fAsap: 'O mais depressa possível',
+    f1to3: 'Dentro de 1 a 3 meses',
+    f3to6: 'Dentro de 3 a 6 meses',
+    fOrienting: 'Ainda a ponderar',
+    fMessage: 'Detalhes',
+    fMessageHint: 'Por exemplo: área de cobertura, número de pontos de carregamento, inversor existente…',
+    fName: 'Nome',
+    fEmail: 'Endereço de e-mail',
+    fPhone: 'Telefone',
+    fPostcode: 'Código postal',
+    fHouseNumber: 'Número',
+    fCompany: 'Nome da empresa',
+    fPreferred: 'Prefere ser contactado por',
+    fByPhone: 'Telefone',
+    fByEmail: 'E-mail',
+    fByWhatsapp: 'WhatsApp',
+    fConsent: 'Aceito que a Pupa Elektrotechniek use os meus dados para responder a este pedido.',
+    fOptional: 'facultativo',
+
+    back: 'Anterior',
+    next: 'Seguinte',
+    submit: 'Enviar pedido',
+    submitting: 'A enviar pedido…',
+    reviewTitle: 'Verifique o seu pedido',
+    edit: 'Alterar',
+
+    errRequired: 'Este campo é obrigatório.',
+    errEmail: 'Introduza um endereço de e-mail válido.',
+    errPhone: 'Introduza um número de telefone válido.',
+    errPostcode: 'Introduza um código postal válido, por exemplo 2011 AB.',
+    errConsent: 'Sem o seu consentimento não podemos tratar o pedido.',
+    errCompany: 'Indique o nome da empresa.',
+    errorSummary: 'Ainda falta alguma coisa. Verifique os campos assinalados.',
+    errorTitle: 'Não foi possível enviar',
+    errorBody: 'Tente novamente, ou ligue-nos diretamente — isso funciona sempre.',
+
+    successTitle: 'Pedido recebido',
+    successBody:
+      'Respondemos em dois dias úteis com um cálculo fundamentado. Não é um preço de tabela: calculamos a sua situação.',
+    successRef: 'Referência',
+    backHome: 'Voltar à página inicial',
+    devNotice:
+      'Modo de desenvolvimento: não há RESEND_API_KEY configurada, por isso o pedido foi escrito no registo do servidor em vez de enviado por e-mail.',
+
+    privacyTitle: 'Declaração de privacidade',
+    termsTitle: 'Condições gerais',
+    legalDraft:
+      'Este texto é um rascunho. Deve ser revisto por um jurista antes de o site ir para o ar; as partes que precisam de dados da empresa estão marcadas como TODO.',
   },
 };
 

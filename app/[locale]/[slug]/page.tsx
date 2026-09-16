@@ -108,6 +108,20 @@ const PRIVACY: Record<Locale, { h: string; p: string }[]> = {
     { h: 'Cuánto tiempo', p: 'Las solicitudes que no se convierten en encargo se conservan doce meses. Los expedientes de instalaciones ejecutadas se conservan mientras lo exijan el plazo legal y la garantía.' },
     { h: 'Sus derechos', p: `Puede consultar, corregir o eliminar sus datos. Basta un correo a ${company.email}.` },
   ],
+  fr: [
+    { h: 'Qui traite vos données', p: `${company.name}, immatriculée au registre du commerce néerlandais sous le numéro ${company.kvk}, établie à ${company.address.city}.` },
+    { h: 'Ce que nous enregistrons', p: 'Uniquement ce que vous saisissez dans le formulaire de devis : nom, raison sociale, adresse e-mail, numéro de téléphone, code postal et numéro, et vos précisions. Nous n’utilisons ni cookies de suivi ni régies publicitaires.' },
+    { h: 'À quelle fin', p: 'Uniquement pour répondre à votre demande et, si elle devient un chantier, pour exécuter et documenter les travaux.' },
+    { h: 'Combien de temps', p: 'Les demandes qui ne débouchent pas sur un chantier sont conservées douze mois. Les dossiers d’installations réalisées sont conservés aussi longtemps que l’exigent le délai légal et la garantie.' },
+    { h: 'Vos droits', p: `Vous pouvez consulter, faire corriger ou faire supprimer vos données. Un e-mail à ${company.email} suffit.` },
+  ],
+  pt: [
+    { h: 'Quem trata os seus dados', p: `${company.name}, inscrita no registo comercial neerlandês com o número ${company.kvk} e sede em ${company.address.city}.` },
+    { h: 'O que registamos', p: 'Apenas o que introduz no formulário de orçamento: nome, nome da empresa, endereço de e-mail, telefone, código postal e número, e as suas observações. Não usamos cookies de rastreio nem redes de publicidade.' },
+    { h: 'Para quê', p: 'Exclusivamente para responder ao seu pedido e, se der origem a uma obra, para a executar e documentar.' },
+    { h: 'Durante quanto tempo', p: 'Os pedidos que não dão origem a obra são guardados doze meses. Os processos de instalações executadas são guardados enquanto o prazo legal e a garantia o exigirem.' },
+    { h: 'Os seus direitos', p: `Pode consultar, corrigir ou apagar os seus dados. Basta um e-mail para ${company.email}.` },
+  ],
 };
 
 const TERMS: Record<Locale, { h: string; p: string }[]> = {
@@ -128,6 +142,18 @@ const TERMS: Record<Locale, { h: string; p: string }[]> = {
     { h: 'Ejecución', p: 'Todo el trabajo se ejecuta según NEN 1010 y, cuando aplica, NEN 3140. En la entrega recibe el informe de medición, el esquema unifilar y el registro fotográfico.' },
     { h: 'Garantía', p: 'Nuestra mano de obra tiene TODO_GARANTIE años de garantía. Los componentes suministrados llevan la garantía del fabricante, que se entrega con la obra.' },
     { h: 'Pago', p: 'Pago en catorce días desde la fecha de factura, salvo acuerdo escrito distinto.' },
+  ],
+  fr: [
+    { h: 'Devis', p: 'Un devis est valable trente jours et repose sur la situation constatée lors de la visite. Tout écart qui n’apparaît qu’au démontage vous est signalé avant que nous poursuivions.' },
+    { h: 'Exécution', p: 'Tous les travaux sont exécutés selon la NEN 1010 et, le cas échéant, la NEN 3140. À la réception, vous recevez le rapport de mesures, le schéma unifilaire et le reportage photographique.' },
+    { h: 'Garantie', p: 'Notre main-d’œuvre est garantie TODO_GARANTIE ans. Les composants fournis bénéficient de la garantie constructeur, remise avec le chantier.' },
+    { h: 'Paiement', p: 'Paiement sous quatorze jours à compter de la date de facture, sauf accord écrit contraire.' },
+  ],
+  pt: [
+    { h: 'Orçamentos', p: 'Um orçamento é válido trinta dias e baseia-se na situação encontrada na visita prévia. Tudo o que só se torna visível ao desmontar é comunicado antes de continuarmos.' },
+    { h: 'Execução', p: 'Todo o trabalho é executado segundo a NEN 1010 e, quando aplicável, a NEN 3140. Na entrega recebe o relatório de medição, o esquema unifilar e o registo fotográfico.' },
+    { h: 'Garantia', p: 'A nossa mão de obra tem TODO_GARANTIE anos de garantia. Os componentes fornecidos têm a garantia do fabricante, entregue com a obra.' },
+    { h: 'Pagamento', p: 'Pagamento em catorze dias a contar da data da fatura, salvo acordo escrito em contrário.' },
   ],
 };
 

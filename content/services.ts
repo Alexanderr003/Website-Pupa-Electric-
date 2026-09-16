@@ -51,6 +51,22 @@ export const services: Service[] = [
       specs: ['Hasta 4000 A', 'Embarrados y cuadros', 'Fases rotuladas L1 / L2 / L3'],
       alt: 'Embarrado de baja tensión con terminales prensados y conductores de tierra amarillo-verde.',
     },
+    fr: {
+      tag: 'Électricité',
+      name: 'Tableaux généraux de distribution',
+      description:
+        'Tableaux et jeux de barres pour l’industrie et le tertiaire. Cosses serties, serrées au couple et repérées une à une.',
+      specs: ['Jusqu’à 4000 A', 'Jeux de barres et tableaux', 'Phases étiquetées L1 / L2 / L3'],
+      alt: 'Jeu de barres basse tension avec cosses serties et conducteurs de terre vert-jaune.',
+    },
+    pt: {
+      tag: 'Eletricidade',
+      name: 'Quadros gerais de distribuição',
+      description:
+        'Quadros e sistemas de barramento para indústria e serviços. Terminais cravados, apertados ao binário e marcados um a um.',
+      specs: ['Até 4000 A', 'Barramentos e quadros', 'Fases etiquetadas L1 / L2 / L3'],
+      alt: 'Barramento de baixa tensão com terminais cravados e condutores de terra verde-amarelo.',
+    },
   },
   {
     id: 'licht-kracht',
@@ -78,6 +94,22 @@ export const services: Service[] = [
         'Instalaciones completas para naves y producción: circuitos de fuerza, alumbrado, alumbrado de emergencia y todo el cableado intermedio.',
       specs: ['230 / 400 V', 'Circuitos de fuerza y reparto', 'Alumbrado de emergencia'],
       alt: 'Cuadro de distribución con cableado completo en azul, marrón, negro y gris.',
+    },
+    fr: {
+      tag: 'Éclairage et force',
+      name: 'Installations d’éclairage et de force',
+      description:
+        'Installations complètes pour bâtiments d’activité et de production : circuits de force, éclairage, éclairage de secours et tout le câblage intermédiaire.',
+      specs: ['230 / 400 V', 'Circuits de force et distribution', 'Éclairage de secours'],
+      alt: 'Armoire de distribution avec câblage complet en bleu, brun, noir et gris.',
+    },
+    pt: {
+      tag: 'Luz e força',
+      name: 'Instalações de iluminação e força',
+      description:
+        'Instalações completas para pavilhões e produção: circuitos de força, iluminação, iluminação de emergência e toda a cablagem intermédia.',
+      specs: ['230 / 400 V', 'Circuitos de força e distribuição', 'Iluminação de emergência'],
+      alt: 'Quadro de distribuição com cablagem completa em azul, castanho, preto e cinzento.',
     },
   },
   {
@@ -107,6 +139,22 @@ export const services: Service[] = [
       specs: ['5 – 250 kWh', 'Acoplamiento CA y CC', 'Recorte de picos y respaldo'],
       alt: 'Caja de agrupación de continua con fusibles e interruptor general de alterna.',
     },
+    fr: {
+      tag: 'Stockage',
+      name: 'Stockage par batteries',
+      description:
+        'Raccordement et protection des systèmes de batteries : coffrets de regroupement DC, onduleurs et la liaison vers votre tableau général.',
+      specs: ['5 – 250 kWh', 'Couplage AC et DC', 'Écrêtage de pointe et secours'],
+      alt: 'Coffret de regroupement DC avec fusibles et interrupteur général AC dans une armoire de stockage.',
+    },
+    pt: {
+      tag: 'Armazenamento',
+      name: 'Armazenamento em baterias',
+      description:
+        'Ligação e proteção de sistemas de baterias: caixas de agrupamento DC, inversores e a ligação ao seu quadro geral.',
+      specs: ['5 – 250 kWh', 'Acoplamento AC e DC', 'Corte de picos e socorro'],
+      alt: 'Caixa de agrupamento DC com fusíveis e interruptor geral AC num armário de armazenamento.',
+    },
   },
   {
     id: 'laadinfra',
@@ -135,6 +183,22 @@ export const services: Service[] = [
       specs: ['11 – 400 kW', 'Reparto dinámico de carga', 'Medida certificada MID'],
       alt: 'Cuadro de alimentación con pletinas marcadas U, V, W y N y cables de gran sección.',
     },
+    fr: {
+      tag: 'Recharge',
+      name: 'Infrastructure de recharge',
+      description:
+        'D’une borne unique à une station complète : l’alimentation, la distribution et le comptage en dessous — c’est là qu’est le vrai travail.',
+      specs: ['11 – 400 kW', 'Équilibrage de charge dynamique', 'Comptage certifié MID'],
+      alt: 'Coffret d’alimentation avec barres repérées U, V, W et N et câbles de forte section.',
+    },
+    pt: {
+      tag: 'Carregamento',
+      name: 'Infraestrutura de carregamento',
+      description:
+        'De um ponto de carregamento a um posto completo: a alimentação, a distribuição e a contagem por baixo — é aí que está o verdadeiro trabalho.',
+      specs: ['11 – 400 kW', 'Equilíbrio dinâmico de carga', 'Contagem certificada MID'],
+      alt: 'Quadro de alimentação com barras marcadas U, V, W e N e cabos de grande secção.',
+    },
   },
   {
     id: 'service',
@@ -162,6 +226,22 @@ export const services: Service[] = [
         'Inspección periódica, termografía y servicio de averías. Conocemos su instalación porque la construimos nosotros.',
       specs: ['Inspección NEN 3140', 'Termografía', 'Servicio de averías'],
       alt: 'Técnico trabajando dentro de un cuadro de distribución, con ropa de alta visibilidad.',
+    },
+    fr: {
+      tag: 'Service',
+      name: 'Service et maintenance',
+      description:
+        'Inspection périodique, thermographie et service de dépannage. Nous connaissons votre installation parce que nous l’avons construite.',
+      specs: ['Inspection NEN 3140', 'Thermographie', 'Service de dépannage'],
+      alt: 'Monteur au travail dans une armoire de distribution, en vêtements haute visibilité.',
+    },
+    pt: {
+      tag: 'Serviço',
+      name: 'Serviço e manutenção',
+      description:
+        'Inspeção periódica, termografia e serviço de avarias. Conhecemos a sua instalação porque fomos nós que a construímos.',
+      specs: ['Inspeção NEN 3140', 'Termografia', 'Serviço de avarias'],
+      alt: 'Técnico a trabalhar dentro de um quadro de distribuição, com vestuário de alta visibilidade.',
     },
   },
 ];
