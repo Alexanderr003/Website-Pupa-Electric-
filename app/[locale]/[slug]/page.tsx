@@ -88,21 +88,21 @@ export default async function SecondaryPage({
 
 const PRIVACY: Record<Locale, { h: string; p: string }[]> = {
   nl: [
-    { h: 'Wie verwerkt uw gegevens', p: `${company.name}, ingeschreven bij de KvK onder nummer TODO_KVK, gevestigd in ${company.address.city}.` },
+    { h: 'Wie verwerkt uw gegevens', p: `${company.name}, ingeschreven bij de KvK onder nummer ${company.kvk}, gevestigd in ${company.address.city}.` },
     { h: 'Wat wij vastleggen', p: 'Alleen wat u zelf invult in het offerteformulier: naam, bedrijfsnaam, e-mailadres, telefoonnummer, postcode en huisnummer, en uw toelichting. Wij gebruiken geen tracking-cookies en geen advertentienetwerken.' },
     { h: 'Waarvoor', p: 'Uitsluitend om uw aanvraag te beantwoorden en, als daar een opdracht uit voortkomt, om het werk uit te voeren en te documenteren.' },
     { h: 'Hoe lang', p: 'Aanvragen die niet tot een opdracht leiden bewaren wij twaalf maanden. Dossiers van uitgevoerde installaties bewaren wij zolang de wettelijke bewaartermijn en de garantie dat vereisen.' },
     { h: 'Uw rechten', p: `U mag uw gegevens inzien, laten corrigeren of laten verwijderen. Een mail naar ${company.email} volstaat.` },
   ],
   en: [
-    { h: 'Who processes your data', p: `${company.name}, registered with the Dutch Chamber of Commerce under number TODO_KVK, based in ${company.address.city}.` },
+    { h: 'Who processes your data', p: `${company.name}, registered with the Dutch Chamber of Commerce under number ${company.kvk}, based in ${company.address.city}.` },
     { h: 'What we record', p: 'Only what you enter in the quote form: name, company name, email address, phone number, postcode and house number, and your notes. We use no tracking cookies and no ad networks.' },
     { h: 'What for', p: 'Solely to answer your request and, if it becomes a job, to carry out and document the work.' },
     { h: 'How long', p: 'Requests that do not become a job are kept for twelve months. Dossiers for completed installations are kept for as long as statutory retention and the warranty require.' },
     { h: 'Your rights', p: `You may see, correct or delete your data. An email to ${company.email} is enough.` },
   ],
   es: [
-    { h: 'Quién trata sus datos', p: `${company.name}, inscrita en el registro mercantil neerlandés con el número TODO_KVK y domicilio en ${company.address.city}.` },
+    { h: 'Quién trata sus datos', p: `${company.name}, inscrita en el registro mercantil neerlandés con el número ${company.kvk} y domicilio en ${company.address.city}.` },
     { h: 'Qué registramos', p: 'Solo lo que usted introduce en el formulario de presupuesto: nombre, empresa, correo, teléfono, código postal y número, y sus comentarios. No usamos cookies de seguimiento ni redes publicitarias.' },
     { h: 'Para qué', p: 'Únicamente para responder a su solicitud y, si da lugar a un encargo, para ejecutar y documentar el trabajo.' },
     { h: 'Cuánto tiempo', p: 'Las solicitudes que no se convierten en encargo se conservan doce meses. Los expedientes de instalaciones ejecutadas se conservan mientras lo exijan el plazo legal y la garantía.' },

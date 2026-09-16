@@ -87,18 +87,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               </div>
               <div className="legend">
                 <div>
-                  <span className="sw" style={{ background: 'var(--zon)' }} />
+                  <span className="sw sw-pos" />
                   <span>{t.lg1}</span>
                 </div>
                 <div>
-                  <span
-                    className="sw"
-                    style={{ background: 'rgba(255,196,0,.3)', border: '1.5px solid var(--zon)' }}
-                  />
+                  <span className="sw sw-bat" />
                   <span>{t.lg2}</span>
                 </div>
                 <div>
-                  <span className="sw" style={{ border: '1.5px solid var(--grijs2)' }} />
+                  <span className="sw sw-net" />
                   <span>{t.lg3}</span>
                 </div>
               </div>

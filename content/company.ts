@@ -33,8 +33,8 @@ export const company: Company = {
   phone: 'TODO_PHONE',
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP ?? 'TODO_WHATSAPP',
   serviceArea: 'TODO_REGIO',
-  kvk: 'TODO_KVK',
-  vat: 'TODO_BTW',
+  kvk: '83140778',
+  vat: 'NL003780578B46',
   tagline: {
     nl: 'Erkend elektrotechnisch installatiebedrijf · Nederland',
     en: 'Certified electrical installation company · Netherlands',

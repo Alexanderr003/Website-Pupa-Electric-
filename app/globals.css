@@ -214,6 +214,11 @@ img{display:block;max-width:100%}
 .legend{display:flex;flex-wrap:wrap;gap:9px 22px;margin-top:18px;padding-top:16px;border-top:1px solid var(--lijn)}
 .legend div{display:flex;align-items:center;gap:9px;font-size:var(--t-xs);font-family:var(--f-mono);color:var(--grijs)}
 .sw{width:13px;height:13px;border-radius:2px;flex:none}
+/* The swatches share the chart marks' declarations so a token change can never
+   leave the legend describing a colour the chart no longer uses. */
+.sw-pos{background:var(--zon-graf)}
+.sw-bat{background:color-mix(in srgb,var(--zon-graf) 30%,transparent);border:1.5px solid var(--zon-graf)}
+.sw-net{border:1.5px solid var(--grijs2)}
 .caption{font-size:var(--t-xs);color:var(--grijs2);font-family:var(--f-mono);line-height:1.6;margin-top:16px}
 
 /* ===================== WERKDOSSIER ===================== */

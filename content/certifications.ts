@@ -1,3 +1,4 @@
+import { company } from './company';
 import type { Localised } from './types';
 
 export type CertCopy = {
@@ -35,7 +36,7 @@ const raw = [
      nl:{k:'Erkenning netbeheerder',w:'Geregistreerd om zelf aan te sluiten en installaties te melden bij de netbeheerder.'},
      en:{k:'Grid operator registration',w:'Registered to connect and to notify installations to the grid operator ourselves.'},
      es:{k:'Reconocimiento de la distribuidora',w:'Registrados para conectar y declarar instalaciones ante la distribuidora.'}},
-    {name:'KvK', reg:'TODO_KVK', val:'—',
+    {name:'KvK', reg:company.kvk, val:'—',
      nl:{k:'Handelsregister',w:'Ingeschreven in het Nederlandse handelsregister; het uittreksel sturen wij op verzoek mee.'},
      en:{k:'Chamber of Commerce',w:'Registered in the Dutch trade register; we send the extract on request.'},
      es:{k:'Registro mercantil',w:'Inscritos en el registro mercantil neerlandés; enviamos el extracto si lo pide.'}}
