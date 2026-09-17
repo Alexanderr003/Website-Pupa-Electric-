@@ -2,17 +2,9 @@
 
 import { useEffect, useState } from 'react';
 
-type Mode = 'auto' | 'light' | 'dark';
-const ORDER: Mode[] = ['auto', 'light', 'dark'];
+type Mode = 'light' | 'dark';
 
 const ICON: Record<Mode, React.ReactNode> = {
-  // half-filled disc: the page follows whatever the device is set to
-  auto: (
-    <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true">
-      <circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" strokeWidth="1.6" />
-      <path d="M8 1.8a6.2 6.2 0 0 1 0 12.4z" fill="currentColor" />
-    </svg>
-  ),
   light: (
     <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true">
       <circle cx="8" cy="8" r="3.4" fill="currentColor" />
@@ -23,47 +15,60 @@ const ICON: Record<Mode, React.ReactNode> = {
   ),
   dark: (
     <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true">
-      <path
-        d="M13.4 10.3A5.8 5.8 0 0 1 5.7 2.6a5.9 5.9 0 1 0 7.7 7.7z"
-        fill="currentColor"
-      />
+      <path d="M13.4 10.3A5.8 5.8 0 0 1 5.7 2.6a5.9 5.9 0 1 0 7.7 7.7z" fill="currentColor" />
     </svg>
   ),
 };
 
 /**
- * Light, dark, or whatever the device says.
+ * Two states, and every press changes the colour.
  *
- * The stylesheet already answered all four combinations of stamp and system
- * preference, so this only has to set or clear `data-theme` — no class
- * juggling, no second palette. "Auto" stays the default because a visitor who
- * has told their phone they want dark should not have to tell us as well.
+ * This used to cycle auto → light → dark. On a phone already set to light, the
+ * first press moved auto → light and nothing visibly happened, so the control
+ * read as frozen and people pressed it two or three times. One press in three
+ * was always a no-op, whichever way the device was set.
+ *
+ * The device preference still decides what you see before you have chosen
+ * anything — the stylesheet answers the unstamped case — but once you press the
+ * button you have made a choice, and it is honoured from then on.
  */
-export function ThemeToggle({ labels }: { labels: Record<Mode, string>; }) {
-  const [mode, setMode] = useState<Mode>('auto');
+export function ThemeToggle({ labels }: { labels: Record<Mode, string> }) {
+  const [mode, setMode] = useState<Mode | null>(null);
 
   useEffect(() => {
     const stamped = document.documentElement.getAttribute('data-theme');
-    setMode(stamped === 'light' || stamped === 'dark' ? stamped : 'auto');
+    if (stamped === 'light' || stamped === 'dark') {
+      setMode(stamped);
+      return;
+    }
+    // Nothing stamped: read what the device is actually showing right now.
+    setMode(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   }, []);
 
-  function cycle() {
-    const next = ORDER[(ORDER.indexOf(mode) + 1) % ORDER.length] as Mode;
+  function flip() {
+    const next: Mode = mode === 'dark' ? 'light' : 'dark';
     setMode(next);
-    const root = document.documentElement;
-    if (next === 'auto') root.removeAttribute('data-theme');
-    else root.setAttribute('data-theme', next);
+    document.documentElement.setAttribute('data-theme', next);
     try {
-      if (next === 'auto') localStorage.removeItem('pupa-theme');
-      else localStorage.setItem('pupa-theme', next);
+      localStorage.setItem('pupa-theme', next);
     } catch {
       /* private mode — the choice simply does not persist */
     }
   }
 
+  // Before the effect runs we do not know which way round the device is, and
+  // guessing would show the wrong icon for a frame.
+  const shown: Mode = mode ?? 'dark';
+
   return (
-    <button type="button" className="iconbtn" onClick={cycle} aria-label={labels[mode]}>
-      {ICON[mode]}
+    <button
+      type="button"
+      className="iconbtn"
+      onClick={flip}
+      aria-label={labels[shown]}
+      aria-pressed={undefined}
+    >
+      {ICON[shown]}
     </button>
   );
 }
