@@ -7,6 +7,11 @@ import { useEffect, useState } from 'react';
  * the pulsing arrow on the chart. Vercel's interface guidelines require a
  * control for autoplaying motion that runs longer than five seconds; rather
  * than bolting a button onto each animation, they all read one flag.
+ *
+ * `title` carries the same wording as the accessible name, so hovering the icon
+ * says what it does without the label taking up room in the header. A phone has
+ * no hover, but there one press stops the motion and the effect is its own
+ * explanation.
  */
 export function MotionToggle({ pauseLabel, resumeLabel }: { pauseLabel: string; resumeLabel: string }) {
   const [paused, setPaused] = useState(false);
@@ -33,6 +38,7 @@ export function MotionToggle({ pauseLabel, resumeLabel }: { pauseLabel: string; 
       onClick={toggle}
       aria-pressed={paused}
       aria-label={paused ? resumeLabel : pauseLabel}
+      title={paused ? resumeLabel : pauseLabel}
     >
       {paused ? (
         <svg width="13" height="13" viewBox="0 0 12 12" aria-hidden="true">
