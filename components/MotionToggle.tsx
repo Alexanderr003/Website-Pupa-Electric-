@@ -7,11 +7,6 @@ import { useEffect, useState } from 'react';
  * the pulsing arrow on the chart. Vercel's interface guidelines require a
  * control for autoplaying motion that runs longer than five seconds; rather
  * than bolting a button onto each animation, they all read one flag.
- *
- * The label is visible wherever there is room for it — in the phone menu it sits
- * beside the icon, because a lone pause glyph tells nobody what it pauses. On a
- * wide screen the header is tight, so it falls back to the icon and its
- * accessible name.
  */
 export function MotionToggle({ pauseLabel, resumeLabel }: { pauseLabel: string; resumeLabel: string }) {
   const [paused, setPaused] = useState(false);
@@ -49,9 +44,6 @@ export function MotionToggle({ pauseLabel, resumeLabel }: { pauseLabel: string; 
           <rect x="8" y="0" width="4" height="12" rx="1" fill="currentColor" />
         </svg>
       )}
-      <span className="btn-text" aria-hidden="true">
-        {paused ? resumeLabel : pauseLabel}
-      </span>
     </button>
   );
 }
