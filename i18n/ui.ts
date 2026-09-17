@@ -83,6 +83,12 @@ const ui = {
     devNotice:
       'Ontwikkelmodus: er is geen RESEND_API_KEY ingesteld, dus de aanvraag is naar de serverlog geschreven in plaats van gemaild.',
 
+    exploreEb: 'Waar wilt u heen',
+    exploreH: 'Vier ingangen, geen eindeloze pagina.',
+    cardServices: 'Verdeelinrichtingen, licht en kracht, opslag, laadpalen en service — met de waarden erbij.',
+    cardWork: 'Een compleet werkdossier en foto’s van eigen werk, van dichtbij.',
+    cardAbout: 'Sinds 2019, heel Nederland, en waarom wij alles vastleggen.',
+    cardJobs: 'Vacatures voor monteurs, en het formulier om te solliciteren.',
     navAbout: 'Over ons',
     navJobs: 'Werken bij ons',
     moreServices: 'Alle diensten',
@@ -122,6 +128,7 @@ const ui = {
     jobsOfferH: 'Wat het werk inhoudt',
     jobsOfferP:
       'Echt vakwerk aan de zware kant van de installatie, geen eindeloze meterkasten. Je werkt in een vaste ploeg, je meet je eigen werk door en je legt het vast in het dossier dat de klant krijgt. Wij besteden niet uit, dus wat jij bouwt blijft van jou — inclusief de service erop.',
+    jobsStaticNote: 'Dit is een ontwerpvoorbeeld. Op de gebouwde site staat hier het sollicitatieformulier; stuur zolang een mail, dan reageren wij net zo snel.',
     jobsFormTitle: 'Stuur je gegevens',
     jobsFormLede:
       'Vul in wat je kunt en hoe wij je kunnen bereiken. Een cv is niet verplicht om te beginnen — bij een eerste reactie vragen wij er zelf om.',
@@ -233,6 +240,12 @@ const ui = {
     devNotice:
       'Development mode: no RESEND_API_KEY is set, so the request was written to the server log instead of emailed.',
 
+    exploreEb: 'Where do you want to go',
+    exploreH: 'Four ways in, not one endless page.',
+    cardServices: 'Distribution boards, light and power, storage, charge points and service — with the ratings.',
+    cardWork: 'A complete job dossier and photographs of our own work, up close.',
+    cardAbout: 'Since 2019, the whole of the Netherlands, and why we record everything.',
+    cardJobs: 'Openings for engineers, and the form to apply with.',
     navAbout: 'About us',
     navJobs: 'Work with us',
     moreServices: 'All services',
@@ -272,6 +285,7 @@ const ui = {
     jobsOfferH: 'What the work is',
     jobsOfferP:
       'Real craft at the heavy end of the installation, not an endless run of consumer units. You work in a settled crew, you test your own work and you record it in the dossier the customer receives. We do not subcontract, so what you build stays yours — including the service on it.',
+    jobsStaticNote: 'This is a design sample. On the built site the application form sits here; send an email in the meantime and we will answer just as quickly.',
     jobsFormTitle: 'Send us your details',
     jobsFormLede:
       'Tell us what you can do and how to reach you. A CV is not required to start — we will ask for one when we come back to you.',
@@ -383,6 +397,12 @@ const ui = {
     devNotice:
       'Modo de desarrollo: no hay RESEND_API_KEY configurada, así que la solicitud se escribió en el log del servidor en lugar de enviarse por correo.',
 
+    exploreEb: 'Adónde quiere ir',
+    exploreH: 'Cuatro entradas, no una página interminable.',
+    cardServices: 'Cuadros, luz y fuerza, almacenamiento, recarga y servicio — con sus valores.',
+    cardWork: 'Un dossier de obra completo y fotos de trabajo propio, de cerca.',
+    cardAbout: 'Desde 2019, todos los Países Bajos, y por qué lo registramos todo.',
+    cardJobs: 'Vacantes para técnicos y el formulario para inscribirse.',
     navAbout: 'Quiénes somos',
     navJobs: 'Trabaja con nosotros',
     moreServices: 'Todos los servicios',
@@ -422,6 +442,7 @@ const ui = {
     jobsOfferH: 'En qué consiste el trabajo',
     jobsOfferP:
       'Oficio de verdad en la parte pesada de la instalación, no cuadros domésticos en serie. Trabaja en un equipo fijo, mide su propio trabajo y lo documenta en el expediente que recibe el cliente. No subcontratamos, así que lo que usted monta sigue siendo suyo — incluido el servicio posterior.',
+    jobsStaticNote: 'Esto es una muestra de diseño. En la web construida aquí va el formulario de candidatura; mientras tanto escriba un correo y le responderemos igual de rápido.',
     jobsFormTitle: 'Envíenos sus datos',
     jobsFormLede:
       'Cuéntenos qué sabe hacer y cómo localizarle. El currículum no hace falta para empezar: se lo pediremos cuando le respondamos.',
@@ -533,6 +554,12 @@ const ui = {
     devNotice:
       'Mode développement : aucune RESEND_API_KEY n’est configurée, la demande a donc été écrite dans le journal du serveur au lieu d’être envoyée par e-mail.',
 
+    exploreEb: 'Où voulez-vous aller',
+    exploreH: 'Quatre entrées, pas une page sans fin.',
+    cardServices: 'Tableaux, éclairage et force, stockage, recharge et service — avec les calibres.',
+    cardWork: 'Un dossier de chantier complet et des photos de nos travaux, de près.',
+    cardAbout: 'Depuis 2019, tout le territoire néerlandais, et pourquoi nous consignons tout.',
+    cardJobs: 'Postes pour monteurs, et le formulaire pour postuler.',
     navAbout: 'À propos',
     navJobs: 'Nous rejoindre',
     moreServices: 'Toutes les prestations',
@@ -572,6 +599,7 @@ const ui = {
     jobsOfferH: 'En quoi consiste le travail',
     jobsOfferP:
       'Du vrai métier sur la partie lourde de l’installation, pas des tableaux domestiques à la chaîne. Vous travaillez en équipe fixe, vous mesurez votre propre travail et vous le consignez dans le dossier remis au client. Nous ne sous-traitons pas : ce que vous montez reste le vôtre, service compris.',
+    jobsStaticNote: 'Ceci est un exemple de conception. Sur le site construit, le formulaire de candidature se trouve ici ; envoyez un e-mail en attendant, nous répondrons aussi vite.',
     jobsFormTitle: 'Envoyez-nous vos coordonnées',
     jobsFormLede:
       'Dites-nous ce que vous savez faire et comment vous joindre. Le CV n’est pas exigé au départ : nous le demanderons en vous répondant.',
@@ -683,6 +711,12 @@ const ui = {
     devNotice:
       'Modo de desenvolvimento: não há RESEND_API_KEY configurada, por isso o pedido foi escrito no registo do servidor em vez de enviado por e-mail.',
 
+    exploreEb: 'Para onde quer ir',
+    exploreH: 'Quatro entradas, não uma página sem fim.',
+    cardServices: 'Quadros, luz e força, armazenamento, carregamento e serviço — com os valores.',
+    cardWork: 'Um processo de obra completo e fotografias do nosso trabalho, de perto.',
+    cardAbout: 'Desde 2019, todos os Países Baixos, e porque registamos tudo.',
+    cardJobs: 'Vagas para técnicos e o formulário para se candidatar.',
     navAbout: 'Quem somos',
     navJobs: 'Trabalhar connosco',
     moreServices: 'Todos os serviços',
@@ -722,6 +756,7 @@ const ui = {
     jobsOfferH: 'Em que consiste o trabalho',
     jobsOfferP:
       'Ofício a sério na parte pesada da instalação, não quadros domésticos em série. Trabalha numa equipa fixa, mede o seu próprio trabalho e regista-o no processo que o cliente recebe. Não subcontratamos, por isso o que monta continua seu — incluindo a assistência.',
+    jobsStaticNote: 'Isto é uma amostra de design. No site construído o formulário de candidatura fica aqui; entretanto envie um e-mail e respondemos com a mesma rapidez.',
     jobsFormTitle: 'Envie os seus dados',
     jobsFormLede:
       'Diga-nos o que sabe fazer e como o podemos contactar. O currículo não é preciso já: pedimo-lo quando lhe respondermos.',

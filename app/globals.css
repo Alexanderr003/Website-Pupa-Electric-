@@ -103,6 +103,9 @@ img{display:block;max-width:100%}
   transform:scaleX(0);transform-origin:left;transition:transform .22s cubic-bezier(.22,1,.36,1)}
 .nav a:hover{color:var(--wit)}
 .nav a:hover::after,.nav a:focus-visible::after{transform:scaleX(1)}
+/* The page you are on keeps its underline, so the header says where you are. */
+.nav a[aria-current="page"]{color:var(--wit)}
+.nav a[aria-current="page"]::after{transform:scaleX(1)}
 .tools{display:flex;gap:8px;align-items:center}
 .langs{position:relative}
 .lang-btn{display:inline-flex;align-items:center;gap:7px;height:38px;padding:0 10px;border-radius:4px;
@@ -389,6 +392,27 @@ td small{display:block;color:var(--grijs2);font-size:var(--t-xs);margin-top:4px;
   .svc:hover,.btn:hover,.fab:hover{transform:none}
   .lang-panel{transition:none}
 }
+
+/* ===================== HOME DOORS ===================== */
+/* The whole middle of the front page: four links, each one a destination. */
+.doors{list-style:none;margin:0;padding:0;display:grid;gap:12px;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr))}
+.door{position:relative;display:flex;flex-direction:column;gap:9px;height:100%;
+  padding:24px 26px 54px;border:1px solid var(--lijn);border-radius:6px;background:var(--paneel);
+  text-decoration:none;overflow:hidden;
+  transition:border-color .2s ease,transform .25s cubic-bezier(.22,1,.36,1)}
+.door:hover,.door:focus-visible{border-color:var(--lijn2);transform:translateY(-4px)}
+.door::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--zon-graf);
+  transform:scaleY(0);transform-origin:top;transition:transform .32s cubic-bezier(.22,1,.36,1)}
+.door:hover::before,.door:focus-visible::before{transform:scaleY(1)}
+.door-h{font-family:var(--f-dsp);font-variation-settings:'wdth' 98;font-weight:900;font-size:1.32rem;
+  letter-spacing:-.018em}
+.door-p{font-size:var(--t-sm);color:var(--grijs);line-height:1.6}
+.door-list{margin-top:4px;padding-top:12px;border-top:1px solid var(--lijn);
+  font-family:var(--f-mono);font-size:var(--t-xs);letter-spacing:.06em;color:var(--zon-ink);line-height:1.8}
+.door-go{position:absolute;left:26px;bottom:20px;color:var(--zon-ink);font-size:1.15rem;line-height:1;
+  transition:transform .22s cubic-bezier(.22,1,.36,1)}
+.door:hover .door-go,.door:focus-visible .door-go{transform:translateX(7px)}
 
 /* ===================== PAGE FURNITURE ===================== */
 /* The "read the rest" link that ends a teaser section. */
