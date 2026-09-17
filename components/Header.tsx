@@ -3,6 +3,7 @@ import type { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/get-dictionary';
 import { hrefFor } from '@/i18n/routing';
 import { LocaleSwitcher } from './LocaleSwitcher';
+import { NavLinks } from './NavLinks';
 import { MotionToggle } from './MotionToggle';
 import { ThemeToggle } from './ThemeToggle';
 
@@ -48,13 +49,7 @@ export function Header({ locale }: { locale: Locale }) {
           </span>
         </Link>
 
-        <nav className="nav" aria-label={t.mainmenu}>
-          {nav.map((item) => (
-            <Link key={item.href} href={item.href}>
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+        <NavLinks items={nav} label={t.mainmenu} />
 
         <div className="tools">
           <ThemeToggle
