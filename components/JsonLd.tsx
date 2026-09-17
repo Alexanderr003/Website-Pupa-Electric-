@@ -39,7 +39,8 @@ export function LocalBusinessJsonLd({ locale }: { locale: Locale }) {
   if (!isTodo(company.email)) data.email = company.email;
   if (!isTodo(company.kvk)) data.identifier = company.kvk;
   if (!isTodo(company.vat)) data.vatID = company.vat;
-  if (!isTodo(company.serviceArea)) data.areaServed = company.serviceArea;
+  data.areaServed = { '@type': 'Country', name: 'Netherlands' };
+  data.foundingDate = company.founded;
 
   return (
     <script

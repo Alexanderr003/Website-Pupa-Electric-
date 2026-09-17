@@ -10,12 +10,12 @@ export function Header({ locale }: { locale: Locale }) {
   const t = getDictionary(locale);
   const home = `/${locale}`;
 
+  // Real routes now, not anchors into one long page.
   const nav = [
-    { href: `${home}#diensten`, label: t.nav1 },
-    { href: `${home}#opslag`, label: t.nav2 },
-    { href: `${home}#dossier`, label: t.nav3 },
-    { href: `${home}#prijs`, label: t.nav4 },
-    { href: `${home}#certificaten`, label: t.nav5 },
+    { href: hrefFor('services', locale), label: t.nav1 },
+    { href: hrefFor('work', locale), label: t.nav3 },
+    { href: hrefFor('about', locale), label: t.navAbout },
+    { href: hrefFor('careers', locale), label: t.navJobs },
   ];
 
   return (

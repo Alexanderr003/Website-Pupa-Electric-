@@ -8,15 +8,11 @@ import { alternatesFor } from '@/lib/seo';
 import { nbsp } from '@/lib/format';
 import { Hero } from '@/components/Hero';
 import { Ticker } from '@/components/Ticker';
-import { ServiceGrid } from '@/components/ServiceGrid';
-import { LoadChart } from '@/components/LoadChart';
-import { DossierList } from '@/components/DossierList';
 import { PhotoWall } from '@/components/PhotoWall';
-import { VanBand } from '@/components/VanBand';
-import { PriceTable } from '@/components/PriceTable';
-import { CertWall } from '@/components/CertWall';
 import { LocalBusinessJsonLd } from '@/components/JsonLd';
-import { CallLink } from '@/components/CallLink';
+import { Section } from '@/components/sections/Section';
+import { ServicesSection } from '@/components/sections/ServicesSection';
+import { CtaBand } from '@/components/sections/CtaBand';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -33,6 +29,13 @@ export async function generateMetadata({
   return { description: t.lede, alternates: alternatesFor('/', locale) };
 }
 
+/**
+ * The home page introduces each thread and hands off. Everything that used to
+ * live here in full — the storage chart, the job dossier, the photo wall, the
+ * price breakdown, the certifications — now has its own route, because a single
+ * page carrying all of it asked a visitor to scroll past four subjects to reach
+ * the one they came for.
+ */
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale: raw } = await params;
   if (!isLocale(raw)) notFound();
@@ -46,130 +49,36 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <Ticker />
 
       <div className="wrap">
-        <section className="sec" id="diensten">
-          <span className="sec-num" aria-hidden="true">
-            {t.g1}
-          </span>
-          <div className="sec-head">
-            <p className="eyebrow">{t.eb1}</p>
-            <h2>{t.h2a}</h2>
-            <p className="lede">{nbsp(t.p1)}</p>
-          </div>
-          <ServiceGrid locale={locale} />
-        </section>
+        <ServicesSection locale={locale} />
+        <p className="more">
+          <Link href={hrefFor('services', locale)}>{t.moreServices}</Link>
+        </p>
 
-        <section className="sec" id="opslag">
-          <span className="sec-num" aria-hidden="true">
-            {t.g2}
-          </span>
-          <div className="sec-head">
-            <p className="eyebrow">{t.eb2}</p>
-            <h2>{t.h2b}</h2>
+        <Section id="opslag" ghost={t.g2} eyebrow={t.eb2} title={t.h2b} lede={t.p2}>
+          <div className="numstack numstack-row">
+            <span className="bignum">
+              72<small>{nbsp(t.bn1)}</small>
+            </span>
+            <span className="bignum">
+              78&nbsp;%<small>{nbsp(t.bn2)}</small>
+            </span>
+            <span className="bignum">
+              ≥50&nbsp;%<small>{nbsp(t.bn3)}</small>
+            </span>
           </div>
-          <div className="split">
-            <div>
-              <p className="lede">{nbsp(t.p2)}</p>
-              <div className="numstack">
-                <span className="bignum">
-                  72<small>{nbsp(t.bn1)}</small>
-                </span>
-                <span className="bignum">
-                  78&nbsp;%<small>{nbsp(t.bn2)}</small>
-                </span>
-                <span className="bignum">
-                  ≥50&nbsp;%<small>{nbsp(t.bn3)}</small>
-                </span>
-              </div>
-            </div>
-            <div className="chart-card">
-              <div className="chart-scroll">
-                <LoadChart locale={locale} />
-              </div>
-              <div className="legend">
-                <div>
-                  <span className="sw sw-pos" />
-                  <span>{t.lg1}</span>
-                </div>
-                <div>
-                  <span className="sw sw-bat" />
-                  <span>{t.lg2}</span>
-                </div>
-                <div>
-                  <span className="sw sw-net" />
-                  <span>{t.lg3}</span>
-                </div>
-              </div>
-              <p className="caption">{nbsp(t.cap1)}</p>
-            </div>
-          </div>
-        </section>
+          <p className="more">
+            <Link href={`${hrefFor('services', locale)}#opslag`}>{t.moreServices}</Link>
+          </p>
+        </Section>
 
-        <section className="sec" id="dossier">
-          <span className="sec-num" aria-hidden="true">
-            {t.g3}
-          </span>
-          <div className="sec-head">
-            <p className="eyebrow">{t.eb3}</p>
-            <h2>{t.h2c}</h2>
-            <p className="lede">{nbsp(t.p3)}</p>
-          </div>
-          <DossierList locale={locale} />
-          <p className="caption">{nbsp(t.cap2)}</p>
-        </section>
+        <Section id="dossier" ghost={t.g3} eyebrow={t.eb3} title={t.h2c} lede={t.p3}>
+          <PhotoWall locale={locale} limit={3} />
+          <p className="more">
+            <Link href={hrefFor('work', locale)}>{t.moreWork}</Link>
+          </p>
+        </Section>
 
-        <section className="sec" id="voorna">
-          <span className="sec-num" aria-hidden="true">
-            {t.g4}
-          </span>
-          <div className="sec-head">
-            <p className="eyebrow">{t.eb4}</p>
-            <h2>{t.h2d}</h2>
-            <p className="lede">{nbsp(t.p4)}</p>
-          </div>
-          <PhotoWall locale={locale} />
-          <p className="caption">{t.cap3}</p>
-        </section>
-
-        <section className="sec" id="prijs">
-          <span className="sec-num" aria-hidden="true">
-            {t.g5}
-          </span>
-          <div className="sec-head">
-            <p className="eyebrow">{t.eb5}</p>
-            <h2>{t.h2e}</h2>
-            <p className="lede">{nbsp(t.p5)}</p>
-          </div>
-          <PriceTable locale={locale} />
-          <p className="caption">{nbsp(t.cap4)}</p>
-        </section>
-
-        <section className="sec" id="certificaten">
-          <span className="sec-num" aria-hidden="true">
-            {t.g6}
-          </span>
-          <div className="sec-head">
-            <p className="eyebrow">{t.eb6}</p>
-            <h2>{t.h2f}</h2>
-            <p className="lede">{nbsp(t.p6)}</p>
-          </div>
-          <CertWall locale={locale} />
-        </section>
-
-        <section className="sec" id="offerte">
-          <VanBand locale={locale} />
-          <div className="cta" style={{ marginTop: 'clamp(22px,3vw,34px)' }}>
-            <div>
-              <h2>{t.h2g}</h2>
-              <p>{nbsp(t.p7)}</p>
-            </div>
-            <div className="cta-actions">
-              <Link className="btn btn-dark" href={hrefFor('quote', locale)}>
-                {t.cta4}
-              </Link>
-              <CallLink locale={locale} className="btn btn-line" />
-            </div>
-          </div>
-        </section>
+        <CtaBand locale={locale} />
       </div>
     </>
   );

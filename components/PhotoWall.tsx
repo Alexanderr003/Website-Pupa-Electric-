@@ -7,10 +7,11 @@ import { gallery } from '@/content/gallery';
  * The captions are the section: anyone can post a picture of a cabinet, but
  * naming the torque marks and the phase labels invites the close look.
  */
-export function PhotoWall({ locale }: { locale: Locale }) {
+export function PhotoWall({ locale, limit }: { locale: Locale; limit?: number }) {
+  const shots = limit ? gallery.slice(0, limit) : gallery;
   return (
     <div className="wall">
-      {gallery.map((shot) => {
+      {shots.map((shot) => {
         const copy = shot[locale];
         return (
           <figure key={shot.image}>
