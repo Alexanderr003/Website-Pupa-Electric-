@@ -147,6 +147,8 @@ img{display:block;max-width:100%}
     border-bottom:1px solid var(--lijn)}
   .hdr-panel .nav a::after{left:4px;right:4px;bottom:8px}
   .hdr-panel .tools{margin-top:12px;flex-wrap:wrap;gap:8px}
+  .hdr-panel .iconbtn{width:auto;min-height:44px;padding:0 15px;gap:11px;justify-content:flex-start}
+  .hdr-panel .btn-text{display:inline;font-size:var(--t-sm);font-weight:600}
   .hdr-panel .tools .btn{flex:1 1 100%;order:-1;margin-bottom:6px}
 }
 @media (prefers-reduced-motion: reduce){.hdr-panel{transition:none}}
@@ -186,6 +188,9 @@ img{display:block;max-width:100%}
   transition:color .15s ease,border-color .15s ease}
 .iconbtn:hover{color:var(--zon-ink);border-color:var(--lijn2)}
 .iconbtn[aria-pressed="true"]{color:var(--op-zon);background:var(--zon);border-color:var(--zon)}
+/* Hidden where the header is tight; shown in the phone menu, where a lone
+   pause glyph would leave people guessing what it pauses. */
+.btn-text{display:none}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:0 22px;
   border-radius:3px;font-weight:700;font-size:var(--t-sm);text-decoration:none;border:1px solid transparent;
   cursor:pointer;font-family:var(--f-body);letter-spacing:.01em;
