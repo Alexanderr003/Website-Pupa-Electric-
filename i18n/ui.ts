@@ -70,6 +70,7 @@ const ui = {
     errPostcode: 'Vul een geldige postcode in, bijvoorbeeld 2011 AB.',
     errConsent: 'Zonder akkoord kunnen wij uw aanvraag niet in behandeling nemen.',
     errCompany: 'Vul de bedrijfsnaam in.',
+    errYears: 'Vul een aantal jaren in, bijvoorbeeld 6.',
     errorSummary: 'Er ontbreekt nog iets. Controleer de gemarkeerde velden.',
     errorTitle: 'Versturen is niet gelukt',
     errorBody: 'Probeer het opnieuw, of bel ons rechtstreeks — dat werkt altijd.',
@@ -81,6 +82,74 @@ const ui = {
     backHome: 'Terug naar de homepage',
     devNotice:
       'Ontwikkelmodus: er is geen RESEND_API_KEY ingesteld, dus de aanvraag is naar de serverlog geschreven in plaats van gemaild.',
+
+    navAbout: 'Over ons',
+    navJobs: 'Werken bij ons',
+    moreServices: 'Alle diensten',
+    moreWork: 'Bekijk het werkdossier',
+    moreAbout: 'Lees wie wij zijn',
+
+    servicesTitle: 'Wat wij aansluiten',
+    servicesLede:
+      'Vijf disciplines, één ploeg die ze allemaal beheerst. Hieronder staat per dienst wat wij doen, tot welke waarden, en wat u bij oplevering in handen krijgt.',
+    workTitle: 'Ons werk',
+    workLede:
+      'Een installatie beoordeelt u niet op een folder, maar op de aansluitingen. Daarom laten wij een compleet werkdossier zien en foto’s van eigen werk, van dichtbij.',
+
+    aboutTitle: 'Over Pupa Elektrotechniek',
+    aboutLede:
+      'Een elektrotechnisch installatiebedrijf uit Weurt dat de zware kant van het vak doet: hoofdverdeling, rails, opslag en laadinfrastructuur. Geen tussenpersoon, geen doorgeefluik.',
+    aboutFoundedH: 'Sinds 2019',
+    aboutFoundedP:
+      'Pupa Elektrotechniek bestaat sinds 2019. Wij zijn begonnen met het werk waar andere partijen omheen lopen — zware verdeelinrichtingen en railsystemen — en dat is nog steeds waar wij het beste in zijn.',
+    aboutReachH: 'Werkgebied: heel Nederland',
+    aboutReachP:
+      'Wij rijden het hele land door. Voor een storing in de buurt staan wij snel op de stoep; voor een project verderop rekenen wij de reisafstand gewoon in de offerte mee, zodat u vooraf weet waar u aan toe bent.',
+    aboutCrewH: 'Eén ploeg, van eerste meting tot laatste keuring',
+    aboutWhyH: 'Waarom wij het zo doen',
+    aboutWhyP:
+      'Een elektrotechnische installatie zit straks achter een deur die u nooit meer opendoet. U kunt niet zien of de bouten op moment zijn aangedraaid, of de fasen kloppen, of de kabelschoen met de juiste matrijs is geperst. U moet het geloven — of u krijgt het te zien. Wij kiezen het tweede: elke fase gefotografeerd, elke meting vastgelegd, elk dossier ondertekend. Niet omdat het moet, maar omdat het het enige eerlijke antwoord is op een vraag die u zelf niet kunt nakijken.',
+    partnersTitle: 'Met wie wij samenwerken',
+    partnersNote:
+      'Op grotere projecten werken wij samen met vaste partners. Wij noemen ze bij naam; dat is een werkrelatie, geen aanbeveling van hun kant.',
+
+    jobsTitle: 'Werken bij Pupa Elektrotechniek',
+    jobsLede:
+      'Wij zoeken monteurs die het verschil zien tussen “het doet het” en “het is goed gedaan”. Kun je een railsysteem opbouwen, doormeten en je handtekening onder het meetrapport zetten? Dan willen wij je spreken.',
+    jobsWhoH: 'Wie wij zoeken',
+    jobsWhoP:
+      'Monteurs en eerste monteurs met ervaring in verdeelinrichtingen, licht- en krachtinstallaties, energieopslag of laadinfrastructuur. Leerling-monteurs zijn ook welkom: wij leiden liever zelf op dan dat wij slordig werk moeten herstellen. Rijbewijs B is praktisch, want wij werken door heel Nederland.',
+    jobsOfferH: 'Wat het werk inhoudt',
+    jobsOfferP:
+      'Echt vakwerk aan de zware kant van de installatie, geen eindeloze meterkasten. Je werkt in een vaste ploeg, je meet je eigen werk door en je legt het vast in het dossier dat de klant krijgt. Wij besteden niet uit, dus wat jij bouwt blijft van jou — inclusief de service erop.',
+    jobsFormTitle: 'Stuur je gegevens',
+    jobsFormLede:
+      'Vul in wat je kunt en hoe wij je kunnen bereiken. Een cv is niet verplicht om te beginnen — bij een eerste reactie vragen wij er zelf om.',
+    jRole: 'Waarvoor solliciteer je',
+    jRoleMonteur: 'Monteur',
+    jRoleFirst: 'Eerste monteur / voorman',
+    jRoleApprentice: 'Leerling-monteur',
+    jRoleOther: 'Anders',
+    jYears: 'Jaren ervaring',
+    jCerts: 'Certificaten die je hebt',
+    jCertNen: 'NEN 3140 (VOP of VP)',
+    jCertVca: 'VCA',
+    jCertDvp: 'DVP (spoor- en OV-omgeving)',
+    jCertBhv: 'BHV',
+    jCertDriving: 'Rijbewijs B',
+    jStart: 'Beschikbaar vanaf',
+    jStartNow: 'Per direct',
+    jStart1: 'Binnen een maand',
+    jStart2: 'Over twee maanden of later',
+    jMotivation: 'Vertel kort over je werk',
+    jMotivationHint: 'Bijvoorbeeld: het zwaarste dat je hebt opgebouwd, of waar je goed in bent.',
+    jConsent:
+      'Ik ga ermee akkoord dat Pupa Elektrotechniek mijn gegevens gebruikt om deze sollicitatie te behandelen.',
+    jSubmit: 'Sollicitatie versturen',
+    jSubmitting: 'Sollicitatie versturen…',
+    jSuccessTitle: 'Sollicitatie ontvangen',
+    jSuccessBody:
+      'Wij nemen binnen vijf werkdagen contact op. Loopt het bij ons even hard, dan hoor je het alsnog — wij laten niemand in het ongewisse.',
 
     privacyTitle: 'Privacyverklaring',
     termsTitle: 'Algemene voorwaarden',
@@ -151,6 +220,7 @@ const ui = {
     errPostcode: 'Enter a valid postcode, for example 2011 AB.',
     errConsent: 'Without your agreement we cannot process the request.',
     errCompany: 'Enter the company name.',
+    errYears: 'Enter a number of years, for example 6.',
     errorSummary: 'Something is still missing. Check the marked fields.',
     errorTitle: 'Sending failed',
     errorBody: 'Try again, or call us directly — that always works.',
@@ -162,6 +232,74 @@ const ui = {
     backHome: 'Back to the homepage',
     devNotice:
       'Development mode: no RESEND_API_KEY is set, so the request was written to the server log instead of emailed.',
+
+    navAbout: 'About us',
+    navJobs: 'Work with us',
+    moreServices: 'All services',
+    moreWork: 'See the job dossier',
+    moreAbout: 'Read who we are',
+
+    servicesTitle: 'What we connect',
+    servicesLede:
+      'Five disciplines, one crew that masters all of them. Below, per service: what we do, up to which ratings, and what you are handed at completion.',
+    workTitle: 'Our work',
+    workLede:
+      'You do not judge an installation by a brochure, you judge it by the connections. So here is a complete job dossier, and photographs of our own work, up close.',
+
+    aboutTitle: 'About Pupa Elektrotechniek',
+    aboutLede:
+      'An electrical installation company from Weurt doing the heavy end of the trade: main distribution, busbars, storage and charging infrastructure. No middleman, no pass-through.',
+    aboutFoundedH: 'Since 2019',
+    aboutFoundedP:
+      'Pupa Elektrotechniek has been going since 2019. We started with the work other firms walk around — heavy distribution boards and busbar systems — and that is still what we are best at.',
+    aboutReachH: 'Service area: the whole of the Netherlands',
+    aboutReachP:
+      'We drive the entire country. For a fault nearby we are on your doorstep quickly; for a project further out we simply price the travel distance into the quote, so you know where you stand before we start.',
+    aboutCrewH: 'One crew, from the first measurement to the final inspection',
+    aboutWhyH: 'Why we work this way',
+    aboutWhyP:
+      'An electrical installation ends up behind a door you will never open again. You cannot see whether the bolts were torqued to spec, whether the phases are right, whether the lug was crimped with the correct die. You have to take it on trust — or you get to see it. We chose the second: every phase photographed, every measurement recorded, every dossier signed. Not because a rule says so, but because it is the only honest answer to a question you cannot check yourself.',
+    partnersTitle: 'Who we work with',
+    partnersNote:
+      'On larger projects we work alongside regular partners. We name them; that is a working relationship, not an endorsement from their side.',
+
+    jobsTitle: 'Work at Pupa Elektrotechniek',
+    jobsLede:
+      'We are looking for engineers who see the difference between “it works” and “it is done properly”. Can you build a busbar system, test it through and sign your name to the test report? Then we would like to talk.',
+    jobsWhoH: 'Who we are looking for',
+    jobsWhoP:
+      'Engineers and lead engineers with experience in distribution boards, lighting and power installations, energy storage or charging infrastructure. Apprentices are welcome too: we would rather train someone ourselves than repair careless work. A driving licence is practical, because we work throughout the Netherlands.',
+    jobsOfferH: 'What the work is',
+    jobsOfferP:
+      'Real craft at the heavy end of the installation, not an endless run of consumer units. You work in a settled crew, you test your own work and you record it in the dossier the customer receives. We do not subcontract, so what you build stays yours — including the service on it.',
+    jobsFormTitle: 'Send us your details',
+    jobsFormLede:
+      'Tell us what you can do and how to reach you. A CV is not required to start — we will ask for one when we come back to you.',
+    jRole: 'What are you applying for',
+    jRoleMonteur: 'Engineer',
+    jRoleFirst: 'Lead engineer / foreman',
+    jRoleApprentice: 'Apprentice',
+    jRoleOther: 'Something else',
+    jYears: 'Years of experience',
+    jCerts: 'Certificates you hold',
+    jCertNen: 'NEN 3140 (VOP or VP)',
+    jCertVca: 'VCA',
+    jCertDvp: 'DVP (rail and public transport)',
+    jCertBhv: 'First aid / emergency response',
+    jCertDriving: 'Driving licence',
+    jStart: 'Available from',
+    jStartNow: 'Immediately',
+    jStart1: 'Within a month',
+    jStart2: 'In two months or later',
+    jMotivation: 'Tell us briefly about your work',
+    jMotivationHint: 'For example: the heaviest thing you have built, or what you are good at.',
+    jConsent:
+      'I agree that Pupa Elektrotechniek may use my details to handle this application.',
+    jSubmit: 'Send application',
+    jSubmitting: 'Sending application…',
+    jSuccessTitle: 'Application received',
+    jSuccessBody:
+      'We will be in touch within five working days. If we are flat out, you will still hear from us — we leave nobody guessing.',
 
     privacyTitle: 'Privacy statement',
     termsTitle: 'Terms and conditions',
@@ -232,6 +370,7 @@ const ui = {
     errPostcode: 'Introduzca un código postal válido, por ejemplo 2011 AB.',
     errConsent: 'Sin su consentimiento no podemos tramitar la solicitud.',
     errCompany: 'Indique el nombre de la empresa.',
+    errYears: 'Indique un número de años, por ejemplo 6.',
     errorSummary: 'Falta algo. Revise los campos marcados.',
     errorTitle: 'No se pudo enviar',
     errorBody: 'Inténtelo de nuevo o llámenos directamente — eso siempre funciona.',
@@ -243,6 +382,74 @@ const ui = {
     backHome: 'Volver a la página principal',
     devNotice:
       'Modo de desarrollo: no hay RESEND_API_KEY configurada, así que la solicitud se escribió en el log del servidor en lugar de enviarse por correo.',
+
+    navAbout: 'Quiénes somos',
+    navJobs: 'Trabaja con nosotros',
+    moreServices: 'Todos los servicios',
+    moreWork: 'Ver el dossier de obra',
+    moreAbout: 'Conózcanos',
+
+    servicesTitle: 'Lo que conectamos',
+    servicesLede:
+      'Cinco disciplinas y un solo equipo que las domina todas. Abajo, servicio por servicio: qué hacemos, hasta qué valores y qué recibe usted en la entrega.',
+    workTitle: 'Nuestro trabajo',
+    workLede:
+      'Una instalación no se juzga por un folleto, se juzga por las conexiones. Por eso mostramos un dossier de obra completo y fotos de trabajo propio, de cerca.',
+
+    aboutTitle: 'Sobre Pupa Elektrotechniek',
+    aboutLede:
+      'Una empresa instaladora eléctrica de Weurt que hace la parte pesada del oficio: cuadro general, embarrados, almacenamiento y recarga. Sin intermediarios y sin subcontratas.',
+    aboutFoundedH: 'Desde 2019',
+    aboutFoundedP:
+      'Pupa Elektrotechniek existe desde 2019. Empezamos con el trabajo que otras empresas rodean — cuadros pesados y sistemas de embarrado — y sigue siendo lo que mejor hacemos.',
+    aboutReachH: 'Zona de actuación: todos los Países Bajos',
+    aboutReachP:
+      'Recorremos todo el país. Para una avería cercana llegamos rápido; para un proyecto lejano incluimos la distancia en el presupuesto, de modo que usted sepa a qué atenerse antes de empezar.',
+    aboutCrewH: 'Un equipo, de la primera medición a la inspección final',
+    aboutWhyH: 'Por qué trabajamos así',
+    aboutWhyP:
+      'Una instalación eléctrica acaba detrás de una puerta que usted no volverá a abrir. No puede ver si los tornillos se apretaron al par correcto, si las fases están bien, si el terminal se prensó con la matriz adecuada. O se fía — o se lo enseñamos. Elegimos lo segundo: cada fase fotografiada, cada medición registrada, cada expediente firmado. No porque una norma lo exija, sino porque es la única respuesta honesta a una pregunta que usted no puede comprobar.',
+    partnersTitle: 'Con quién colaboramos',
+    partnersNote:
+      'En proyectos grandes trabajamos con socios habituales. Los nombramos; es una relación de trabajo, no un aval por su parte.',
+
+    jobsTitle: 'Trabajar en Pupa Elektrotechniek',
+    jobsLede:
+      'Buscamos técnicos que vean la diferencia entre “funciona” y “está bien hecho”. ¿Sabe montar un embarrado, medirlo y firmar el informe? Entonces queremos hablar con usted.',
+    jobsWhoH: 'A quién buscamos',
+    jobsWhoP:
+      'Técnicos y oficiales de primera con experiencia en cuadros de distribución, instalaciones de alumbrado y fuerza, almacenamiento o recarga. También aceptamos aprendices: preferimos formar nosotros a reparar trabajo descuidado. El carné de conducir es práctico, porque trabajamos por todos los Países Bajos.',
+    jobsOfferH: 'En qué consiste el trabajo',
+    jobsOfferP:
+      'Oficio de verdad en la parte pesada de la instalación, no cuadros domésticos en serie. Trabaja en un equipo fijo, mide su propio trabajo y lo documenta en el expediente que recibe el cliente. No subcontratamos, así que lo que usted monta sigue siendo suyo — incluido el servicio posterior.',
+    jobsFormTitle: 'Envíenos sus datos',
+    jobsFormLede:
+      'Cuéntenos qué sabe hacer y cómo localizarle. El currículum no hace falta para empezar: se lo pediremos cuando le respondamos.',
+    jRole: 'A qué puesto opta',
+    jRoleMonteur: 'Técnico',
+    jRoleFirst: 'Oficial de primera / encargado',
+    jRoleApprentice: 'Aprendiz',
+    jRoleOther: 'Otro',
+    jYears: 'Años de experiencia',
+    jCerts: 'Certificados que tiene',
+    jCertNen: 'NEN 3140 (VOP o VP)',
+    jCertVca: 'VCA',
+    jCertDvp: 'DVP (entorno ferroviario y transporte público)',
+    jCertBhv: 'Primeros auxilios / emergencias',
+    jCertDriving: 'Carné de conducir',
+    jStart: 'Disponible desde',
+    jStartNow: 'De inmediato',
+    jStart1: 'En un mes',
+    jStart2: 'En dos meses o más',
+    jMotivation: 'Cuéntenos brevemente sobre su trabajo',
+    jMotivationHint: 'Por ejemplo: lo más pesado que ha montado, o en qué es bueno.',
+    jConsent:
+      'Acepto que Pupa Elektrotechniek use mis datos para tramitar esta candidatura.',
+    jSubmit: 'Enviar candidatura',
+    jSubmitting: 'Enviando candidatura…',
+    jSuccessTitle: 'Candidatura recibida',
+    jSuccessBody:
+      'Le responderemos en cinco días laborables. Si andamos desbordados, igualmente tendrá noticias nuestras — no dejamos a nadie esperando.',
 
     privacyTitle: 'Declaración de privacidad',
     termsTitle: 'Condiciones generales',
@@ -313,6 +520,7 @@ const ui = {
     errPostcode: 'Saisissez un code postal valide, par exemple 2011 AB.',
     errConsent: 'Sans votre accord, nous ne pouvons pas traiter la demande.',
     errCompany: 'Indiquez la raison sociale.',
+    errYears: 'Indiquez un nombre d’années, par exemple 6.',
     errorSummary: 'Il manque encore quelque chose. Vérifiez les champs signalés.',
     errorTitle: 'L’envoi a échoué',
     errorBody: 'Réessayez, ou appelez-nous directement — cela marche toujours.',
@@ -324,6 +532,74 @@ const ui = {
     backHome: 'Retour à la page d’accueil',
     devNotice:
       'Mode développement : aucune RESEND_API_KEY n’est configurée, la demande a donc été écrite dans le journal du serveur au lieu d’être envoyée par e-mail.',
+
+    navAbout: 'À propos',
+    navJobs: 'Nous rejoindre',
+    moreServices: 'Toutes les prestations',
+    moreWork: 'Voir le dossier de chantier',
+    moreAbout: 'Qui nous sommes',
+
+    servicesTitle: 'Ce que nous raccordons',
+    servicesLede:
+      'Cinq disciplines, une seule équipe qui les maîtrise toutes. Ci-dessous, prestation par prestation : ce que nous faisons, jusqu’à quels calibres, et ce que vous recevez à la réception.',
+    workTitle: 'Nos chantiers',
+    workLede:
+      'Une installation ne se juge pas sur une brochure, elle se juge sur les raccordements. Voici donc un dossier de chantier complet et des photos de nos propres travaux, de près.',
+
+    aboutTitle: 'À propos de Pupa Elektrotechniek',
+    aboutLede:
+      'Une entreprise d’installation électrique de Weurt qui fait la partie lourde du métier : tableau général, jeux de barres, stockage et recharge. Sans intermédiaire ni sous-traitance.',
+    aboutFoundedH: 'Depuis 2019',
+    aboutFoundedP:
+      'Pupa Elektrotechniek existe depuis 2019. Nous avons commencé par le travail que les autres contournent — tableaux lourds et jeux de barres — et c’est toujours ce que nous faisons de mieux.',
+    aboutReachH: 'Zone d’intervention : tout le territoire néerlandais',
+    aboutReachP:
+      'Nous parcourons tout le pays. Pour une panne à proximité nous sommes vite sur place ; pour un chantier plus loin nous chiffrons simplement la distance dans le devis, afin que vous sachiez à quoi vous en tenir avant de commencer.',
+    aboutCrewH: 'Une équipe, de la première mesure au contrôle final',
+    aboutWhyH: 'Pourquoi nous travaillons ainsi',
+    aboutWhyP:
+      'Une installation électrique finit derrière une porte que vous n’ouvrirez plus jamais. Vous ne pouvez pas voir si les boulons ont été serrés au couple, si les phases sont justes, si la cosse a été sertie avec la bonne matrice. Il faut nous croire — ou bien vous le voyez. Nous avons choisi la seconde option : chaque phase photographiée, chaque mesure consignée, chaque dossier signé. Non parce qu’une règle l’impose, mais parce que c’est la seule réponse honnête à une question que vous ne pouvez pas vérifier vous-même.',
+    partnersTitle: 'Avec qui nous travaillons',
+    partnersNote:
+      'Sur les chantiers importants nous travaillons avec des partenaires réguliers. Nous les nommons ; c’est une relation de travail, pas une recommandation de leur part.',
+
+    jobsTitle: 'Travailler chez Pupa Elektrotechniek',
+    jobsLede:
+      'Nous cherchons des monteurs qui voient la différence entre « ça marche » et « c’est bien fait ». Vous savez monter un jeu de barres, le mesurer et signer le rapport ? Alors parlons-nous.',
+    jobsWhoH: 'Qui nous cherchons',
+    jobsWhoP:
+      'Monteurs et chefs d’équipe expérimentés en tableaux de distribution, installations d’éclairage et de force, stockage ou recharge. Les apprentis sont bienvenus aussi : nous préférons former nous-mêmes que réparer du travail bâclé. Le permis B est pratique, car nous intervenons partout aux Pays-Bas.',
+    jobsOfferH: 'En quoi consiste le travail',
+    jobsOfferP:
+      'Du vrai métier sur la partie lourde de l’installation, pas des tableaux domestiques à la chaîne. Vous travaillez en équipe fixe, vous mesurez votre propre travail et vous le consignez dans le dossier remis au client. Nous ne sous-traitons pas : ce que vous montez reste le vôtre, service compris.',
+    jobsFormTitle: 'Envoyez-nous vos coordonnées',
+    jobsFormLede:
+      'Dites-nous ce que vous savez faire et comment vous joindre. Le CV n’est pas exigé au départ : nous le demanderons en vous répondant.',
+    jRole: 'Pour quel poste',
+    jRoleMonteur: 'Monteur',
+    jRoleFirst: 'Chef d’équipe',
+    jRoleApprentice: 'Apprenti',
+    jRoleOther: 'Autre',
+    jYears: 'Années d’expérience',
+    jCerts: 'Certificats que vous détenez',
+    jCertNen: 'NEN 3140 (VOP ou VP)',
+    jCertVca: 'VCA',
+    jCertDvp: 'DVP (milieu ferroviaire et transport public)',
+    jCertBhv: 'Secourisme / intervention d’urgence',
+    jCertDriving: 'Permis de conduire',
+    jStart: 'Disponible à partir de',
+    jStartNow: 'Immédiatement',
+    jStart1: 'Sous un mois',
+    jStart2: 'Dans deux mois ou plus',
+    jMotivation: 'Parlez-nous brièvement de votre travail',
+    jMotivationHint: 'Par exemple : le plus lourd que vous ayez monté, ou votre point fort.',
+    jConsent:
+      'J’accepte que Pupa Elektrotechniek utilise mes données pour traiter cette candidature.',
+    jSubmit: 'Envoyer la candidature',
+    jSubmitting: 'Envoi de la candidature…',
+    jSuccessTitle: 'Candidature reçue',
+    jSuccessBody:
+      'Nous revenons vers vous sous cinq jours ouvrés. Même si nous sommes débordés, vous aurez une réponse — nous ne laissons personne sans nouvelles.',
 
     privacyTitle: 'Déclaration de confidentialité',
     termsTitle: 'Conditions générales',
@@ -394,6 +670,7 @@ const ui = {
     errPostcode: 'Introduza um código postal válido, por exemplo 2011 AB.',
     errConsent: 'Sem o seu consentimento não podemos tratar o pedido.',
     errCompany: 'Indique o nome da empresa.',
+    errYears: 'Indique um número de anos, por exemplo 6.',
     errorSummary: 'Ainda falta alguma coisa. Verifique os campos assinalados.',
     errorTitle: 'Não foi possível enviar',
     errorBody: 'Tente novamente, ou ligue-nos diretamente — isso funciona sempre.',
@@ -405,6 +682,74 @@ const ui = {
     backHome: 'Voltar à página inicial',
     devNotice:
       'Modo de desenvolvimento: não há RESEND_API_KEY configurada, por isso o pedido foi escrito no registo do servidor em vez de enviado por e-mail.',
+
+    navAbout: 'Quem somos',
+    navJobs: 'Trabalhar connosco',
+    moreServices: 'Todos os serviços',
+    moreWork: 'Ver o processo de obra',
+    moreAbout: 'Conheça-nos',
+
+    servicesTitle: 'O que ligamos',
+    servicesLede:
+      'Cinco disciplinas e uma só equipa que as domina todas. Abaixo, serviço a serviço: o que fazemos, até que valores e o que recebe na entrega.',
+    workTitle: 'O nosso trabalho',
+    workLede:
+      'Uma instalação não se julga por um folheto, julga-se pelas ligações. Por isso mostramos um processo de obra completo e fotografias de trabalho próprio, de perto.',
+
+    aboutTitle: 'Sobre a Pupa Elektrotechniek',
+    aboutLede:
+      'Uma empresa instaladora elétrica de Weurt que faz a parte pesada do ofício: quadro geral, barramentos, armazenamento e carregamento. Sem intermediários nem subcontratação.',
+    aboutFoundedH: 'Desde 2019',
+    aboutFoundedP:
+      'A Pupa Elektrotechniek existe desde 2019. Começámos pelo trabalho que as outras empresas contornam — quadros pesados e sistemas de barramento — e continua a ser aquilo em que somos melhores.',
+    aboutReachH: 'Área de atuação: todos os Países Baixos',
+    aboutReachP:
+      'Percorremos o país inteiro. Para uma avaria perto chegamos depressa; para uma obra mais longe incluímos a distância no orçamento, para que saiba com o que conta antes de começarmos.',
+    aboutCrewH: 'Uma equipa, da primeira medição à inspeção final',
+    aboutWhyH: 'Porque trabalhamos assim',
+    aboutWhyP:
+      'Uma instalação elétrica acaba atrás de uma porta que nunca mais vai abrir. Não consegue ver se os parafusos foram apertados ao binário certo, se as fases estão bem, se o terminal foi cravado com a matriz correta. Ou acredita — ou nós mostramos. Escolhemos o segundo: cada fase fotografada, cada medição registada, cada processo assinado. Não porque uma norma o exige, mas porque é a única resposta honesta a uma pergunta que não pode verificar sozinho.',
+    partnersTitle: 'Com quem trabalhamos',
+    partnersNote:
+      'Em obras maiores trabalhamos com parceiros habituais. Nomeamo-los; é uma relação de trabalho, não uma recomendação da parte deles.',
+
+    jobsTitle: 'Trabalhar na Pupa Elektrotechniek',
+    jobsLede:
+      'Procuramos técnicos que vejam a diferença entre “funciona” e “está bem feito”. Sabe montar um barramento, medi-lo e assinar o relatório? Então queremos falar consigo.',
+    jobsWhoH: 'Quem procuramos',
+    jobsWhoP:
+      'Técnicos e chefes de equipa com experiência em quadros de distribuição, instalações de iluminação e força, armazenamento ou carregamento. Aprendizes também são bem-vindos: preferimos formar do que reparar trabalho descuidado. A carta de condução dá jeito, porque trabalhamos em todos os Países Baixos.',
+    jobsOfferH: 'Em que consiste o trabalho',
+    jobsOfferP:
+      'Ofício a sério na parte pesada da instalação, não quadros domésticos em série. Trabalha numa equipa fixa, mede o seu próprio trabalho e regista-o no processo que o cliente recebe. Não subcontratamos, por isso o que monta continua seu — incluindo a assistência.',
+    jobsFormTitle: 'Envie os seus dados',
+    jobsFormLede:
+      'Diga-nos o que sabe fazer e como o podemos contactar. O currículo não é preciso já: pedimo-lo quando lhe respondermos.',
+    jRole: 'A que lugar se candidata',
+    jRoleMonteur: 'Técnico',
+    jRoleFirst: 'Chefe de equipa',
+    jRoleApprentice: 'Aprendiz',
+    jRoleOther: 'Outro',
+    jYears: 'Anos de experiência',
+    jCerts: 'Certificados que possui',
+    jCertNen: 'NEN 3140 (VOP ou VP)',
+    jCertVca: 'VCA',
+    jCertDvp: 'DVP (ambiente ferroviário e transporte público)',
+    jCertBhv: 'Primeiros socorros / emergência',
+    jCertDriving: 'Carta de condução',
+    jStart: 'Disponível a partir de',
+    jStartNow: 'De imediato',
+    jStart1: 'Dentro de um mês',
+    jStart2: 'Dentro de dois meses ou mais',
+    jMotivation: 'Fale-nos brevemente do seu trabalho',
+    jMotivationHint: 'Por exemplo: o mais pesado que montou, ou aquilo em que é bom.',
+    jConsent:
+      'Aceito que a Pupa Elektrotechniek use os meus dados para tratar esta candidatura.',
+    jSubmit: 'Enviar candidatura',
+    jSubmitting: 'A enviar candidatura…',
+    jSuccessTitle: 'Candidatura recebida',
+    jSuccessBody:
+      'Respondemos em cinco dias úteis. Se estivermos com muito trabalho, ainda assim terá notícias — não deixamos ninguém à espera.',
 
     privacyTitle: 'Declaração de privacidade',
     termsTitle: 'Condições gerais',

@@ -19,6 +19,10 @@ export function Footer({ locale }: { locale: Locale }) {
             {company.tagline[locale]}
           </p>
           <p className="note" style={{ marginTop: 14 }}>
+            <Link href={hrefFor('about', locale)}>{t.navAbout}</Link>
+            {' · '}
+            <Link href={hrefFor('careers', locale)}>{t.navJobs}</Link>
+            {' · '}
             <Link href={hrefFor('privacy', locale)}>{t.legalPrivacy}</Link>
             {' · '}
             <Link href={hrefFor('terms', locale)}>{t.legalTerms}</Link>
@@ -41,7 +45,7 @@ export function Footer({ locale }: { locale: Locale }) {
           </dd>
           <dt>{t.f3}</dt>
           <dd>
-            <Todo value={company.serviceArea} />
+            {company.serviceArea[locale]}
           </dd>
           <dt>KvK</dt>
           <dd>

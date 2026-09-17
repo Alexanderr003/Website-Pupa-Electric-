@@ -8,7 +8,17 @@ import { alternatesFor } from '@/lib/seo';
 import { services } from '@/content/services';
 import { company } from '@/content/company';
 import { QuoteForm } from '@/components/QuoteForm';
+import { ApplicationForm } from '@/components/ApplicationForm';
 import { Todo } from '@/components/Todo';
+import { VanBand } from '@/components/VanBand';
+import { ServicesSection } from '@/components/sections/ServicesSection';
+import { StorageSection } from '@/components/sections/StorageSection';
+import { PriceSection } from '@/components/sections/PriceSection';
+import { DossierSection } from '@/components/sections/DossierSection';
+import { WallSection } from '@/components/sections/WallSection';
+import { CertSection } from '@/components/sections/CertSection';
+import { PartnerBand } from '@/components/sections/PartnerBand';
+import { CtaBand } from '@/components/sections/CtaBand';
 
 export const dynamicParams = false;
 
@@ -16,11 +26,46 @@ export function generateStaticParams() {
   return allStaticPaths();
 }
 
-function titleFor(page: PageId, t: ReturnType<typeof getDictionary>): string {
-  if (page === 'quote') return t.qTitle;
-  if (page === 'privacy') return t.privacyTitle;
-  return t.termsTitle;
+type Dict = ReturnType<typeof getDictionary>;
+
+function titleFor(page: PageId, t: Dict): string {
+  switch (page) {
+    case 'services':
+      return t.servicesTitle;
+    case 'work':
+      return t.workTitle;
+    case 'about':
+      return t.aboutTitle;
+    case 'careers':
+      return t.jobsTitle;
+    case 'quote':
+      return t.qTitle;
+    case 'privacy':
+      return t.privacyTitle;
+    case 'terms':
+      return t.termsTitle;
+  }
 }
+
+function ledeFor(page: PageId, t: Dict): string | null {
+  switch (page) {
+    case 'services':
+      return t.servicesLede;
+    case 'work':
+      return t.workLede;
+    case 'about':
+      return t.aboutLede;
+    case 'careers':
+      return t.jobsLede;
+    case 'quote':
+      return t.qLede;
+    default:
+      return null;
+  }
+}
+
+/** The legal drafts stay out of the index; everything else is a real page. */
+const NOINDEX: PageId[] = ['privacy', 'terms'];
 
 export async function generateMetadata({
   params,
@@ -40,7 +85,8 @@ export async function generateMetadata({
   return {
     title: titleFor(page, t),
     alternates: alternatesFor(paths, locale),
-    robots: page === 'quote' ? undefined : { index: false, follow: true },
+    description: ledeFor(page, t) ?? undefined,
+    robots: NOINDEX.includes(page) ? { index: false, follow: true } : undefined,
   };
 }
 
@@ -55,6 +101,91 @@ export default async function SecondaryPage({
   const page = pageIdFromSlug(locale, slug);
   if (!page) notFound();
   const t = getDictionary(locale);
+
+  const head = (
+    <div className="page-head">
+      <h1>{titleFor(page, t)}</h1>
+      {ledeFor(page, t) ? <p className="lede">{ledeFor(page, t)}</p> : null}
+    </div>
+  );
+
+  if (page === 'services') {
+    return (
+      <div className="wrap">
+        {head}
+        <ServicesSection locale={locale} head={false} />
+        <StorageSection locale={locale} />
+        <PriceSection locale={locale} />
+        <CtaBand locale={locale} withVan={false} />
+      </div>
+    );
+  }
+
+  if (page === 'work') {
+    return (
+      <div className="wrap">
+        {head}
+        <DossierSection locale={locale} head={false} />
+        <WallSection locale={locale} />
+        <CtaBand locale={locale} withVan={false} />
+      </div>
+    );
+  }
+
+  if (page === 'about') {
+    return (
+      <div className="wrap">
+        {head}
+        <section className="sec">
+          <div className="prose" style={{ maxWidth: '70ch' }}>
+            <section>
+              <h2>{t.aboutFoundedH}</h2>
+              <p>{t.aboutFoundedP}</p>
+            </section>
+            <section>
+              <h2>{t.aboutReachH}</h2>
+              <p>{t.aboutReachP}</p>
+            </section>
+            <section>
+              <h2>{t.aboutCrewH}</h2>
+              <p>{t.vanBody}</p>
+            </section>
+            <section>
+              <h2>{t.aboutWhyH}</h2>
+              <p>{t.aboutWhyP}</p>
+            </section>
+          </div>
+          <div style={{ marginTop: 'clamp(26px,4vw,44px)' }}>
+            <VanBand locale={locale} />
+          </div>
+        </section>
+        <PartnerBand locale={locale} />
+        <CertSection locale={locale} />
+        <CtaBand locale={locale} withVan={false} />
+      </div>
+    );
+  }
+
+  if (page === 'careers') {
+    return (
+      <div className="wrap">
+        {head}
+        <section className="sec">
+          <div className="prose" style={{ maxWidth: '70ch' }}>
+            <section>
+              <h2>{t.jobsWhoH}</h2>
+              <p>{t.jobsWhoP}</p>
+            </section>
+            <section>
+              <h2>{t.jobsOfferH}</h2>
+              <p>{t.jobsOfferP}</p>
+            </section>
+          </div>
+          <ApplicationForm t={t} homeHref={`/${locale}`} />
+        </section>
+      </div>
+    );
+  }
 
   if (page === 'quote') {
     const serviceLabels: [string, string][] = services.map((s) => [s.id, s[locale].name]);
