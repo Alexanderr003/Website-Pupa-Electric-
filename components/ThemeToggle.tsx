@@ -20,6 +20,9 @@ const ICON: Record<Mode, React.ReactNode> = {
   ),
 };
 
+/** Matches the two grounds in the stylesheet, for the browser chrome. */
+const CHROME: Record<Mode, string> = { light: '#F3F0E7', dark: '#0A0A0B' };
+
 /**
  * Two states, and every press changes the colour.
  *
@@ -28,27 +31,24 @@ const ICON: Record<Mode, React.ReactNode> = {
  * read as frozen and people pressed it two or three times. One press in three
  * was always a no-op, whichever way the device was set.
  *
- * The device preference still decides what you see before you have chosen
- * anything — the stylesheet answers the unstamped case — but once you press the
- * button you have made a choice, and it is honoured from then on.
+ * The site opens light for everyone now, so an unstamped page is light — no
+ * media query to consult and nothing to guess before the first paint. Dark is
+ * what this button is for, and the choice is kept.
  */
 export function ThemeToggle({ labels }: { labels: Record<Mode, string> }) {
-  const [mode, setMode] = useState<Mode | null>(null);
+  const [mode, setMode] = useState<Mode>('light');
 
   useEffect(() => {
     const stamped = document.documentElement.getAttribute('data-theme');
-    if (stamped === 'light' || stamped === 'dark') {
-      setMode(stamped);
-      return;
-    }
-    // Nothing stamped: read what the device is actually showing right now.
-    setMode(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (stamped === 'dark' || stamped === 'light') setMode(stamped);
   }, []);
 
   function flip() {
     const next: Mode = mode === 'dark' ? 'light' : 'dark';
     setMode(next);
     document.documentElement.setAttribute('data-theme', next);
+    // Otherwise iOS keeps the address bar in the colour of the theme you left.
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', CHROME[next]);
     try {
       localStorage.setItem('pupa-theme', next);
     } catch {
@@ -56,9 +56,7 @@ export function ThemeToggle({ labels }: { labels: Record<Mode, string> }) {
     }
   }
 
-  // Before the effect runs we do not know which way round the device is, and
-  // guessing would show the wrong icon for a frame.
-  const shown: Mode = mode ?? 'dark';
+  const shown: Mode = mode;
 
   return (
     <button
