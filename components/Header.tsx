@@ -3,7 +3,7 @@ import type { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/get-dictionary';
 import { hrefFor } from '@/i18n/routing';
 import { LocaleSwitcher } from './LocaleSwitcher';
-import { NavLinks } from './NavLinks';
+import { HeaderPanel } from './HeaderPanel';
 import { MotionToggle } from './MotionToggle';
 import { ThemeToggle } from './ThemeToggle';
 
@@ -49,18 +49,23 @@ export function Header({ locale }: { locale: Locale }) {
           </span>
         </Link>
 
-        <NavLinks items={nav} label={t.mainmenu} />
-
-        <div className="tools">
-          <ThemeToggle
-            labels={{ auto: t.themeAuto, light: t.themeLight, dark: t.themeDark }}
-          />
+        <HeaderPanel
+          items={nav}
+          navLabel={t.mainmenu}
+          menuLabel={t.menuOpen}
+          closeLabel={t.menuClose}
+          quick={
+            <>
+              <ThemeToggle labels={{ light: t.themeLight, dark: t.themeDark }} />
+              <LocaleSwitcher current={locale} label={t.langLabel} />
+            </>
+          }
+        >
           <MotionToggle pauseLabel={t.motionLabel} resumeLabel={t.motionResume} />
-          <LocaleSwitcher current={locale} label={t.langLabel} />
           <Link className="btn btn-p" href={hrefFor('quote', locale)}>
             {t.cta1}
           </Link>
-        </div>
+        </HeaderPanel>
       </div>
     </header>
   );
