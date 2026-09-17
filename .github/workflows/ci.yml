@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# A newer push to the same branch supersedes the run already in flight.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Typecheck and build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      # pnpm is set up first: setup-node reads the version from the
+      # packageManager field and needs pnpm on PATH to cache its store.
+      - uses: pnpm/action-setup@v6
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # Locale parity is enforced by the type system: Record<Locale, Dictionary>
+      # and Localised<T> mean a string missing from any of the five languages
+      # fails here, instead of rendering blank on a live page.
+      - name: Typecheck
+        run: pnpm typecheck
+
+      # Catches what only breaks once the routes are actually rendered —
+      # a bad metadata call, a server/client boundary mistake, a dead import.
+      - name: Build
+        run: pnpm build
