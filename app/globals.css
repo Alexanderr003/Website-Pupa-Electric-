@@ -234,6 +234,12 @@ img{display:block;max-width:100%}
 
 /* ===================== EDITORIAL CHART ===================== */
 .split{display:grid;gap:clamp(26px,4vw,52px);grid-template-columns:1fr;align-items:start}
+/* Grid items default to min-width:auto, so a child declaring a large min-width
+   — the 620px chart — forces the whole track that wide. On a phone that pushed
+   the text column to 654px inside a 390px screen, and body's overflow-x:hidden
+   then cut every sentence off mid-word instead of wrapping it. Letting the
+   items shrink is what lets .chart-scroll actually scroll the chart. */
+.split > *{min-width:0}
 @media (min-width:1000px){.split{grid-template-columns:minmax(280px,.78fr) 1.22fr}}
 .bignum{font-family:var(--f-dsp);font-variation-settings:'wdth' 100;font-weight:900;
   font-size:clamp(3.4rem,8vw,5.6rem);line-height:.88;letter-spacing:-.04em;color:var(--zon-ink);
@@ -243,8 +249,19 @@ img{display:block;max-width:100%}
 .numstack{display:flex;flex-direction:column;gap:30px;margin-top:28px}
 .chart-card{background:var(--paneel);border:1px solid var(--lijn);border-radius:6px;
   box-shadow:var(--schaduw);padding:clamp(16px,2.6vw,26px)}
-.chart-scroll{overflow-x:auto;margin-inline:-4px;padding-inline:4px}
+/* The chart is 24 bars wide; squeezing it into a phone would make the hour
+   labels unreadable, so it scrolls sideways instead — with a fade on the right
+   edge so it is visible that there is more of it. */
+.chart-scroll{overflow-x:auto;margin-inline:-4px;padding-inline:4px;position:relative;
+  overscroll-behavior-x:contain}
 .chart{display:block;width:100%;min-width:620px;height:auto}
+@media (max-width:640px){
+  .chart{min-width:480px}
+  .chart-card{position:relative}
+  .chart-card::after{content:"";position:absolute;top:0;bottom:0;right:0;width:26px;
+    pointer-events:none;border-radius:0 6px 6px 0;
+    background:linear-gradient(90deg,transparent,var(--paneel))}
+}
 .legend{display:flex;flex-wrap:wrap;gap:9px 22px;margin-top:18px;padding-top:16px;border-top:1px solid var(--lijn)}
 .legend div{display:flex;align-items:center;gap:9px;font-size:var(--t-xs);font-family:var(--f-mono);color:var(--grijs)}
 .sw{width:13px;height:13px;border-radius:2px;flex:none}
