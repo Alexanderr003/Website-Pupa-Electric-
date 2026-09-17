@@ -9,11 +9,11 @@ export function ServiceGrid({ locale }: { locale: Locale }) {
       {services.map((service) => {
         const copy = service[locale];
         return (
-          <article className="svc" key={service.image}>
+          <article className="svc" key={service.id}>
             <figure className="svc-fig" style={{ margin: 0 }}>
               <Image
-                src={`/img/svc-${service.image}.webp`}
-                alt=""
+                src={`/img/${service.image}.webp`}
+                alt={copy.alt}
                 width={660}
                 height={500}
                 sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"

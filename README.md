@@ -1,4 +1,4 @@
-# Pupa Electric
+# Pupa Elektrotechniek
 
 Marketing site for a Dutch electrical contractor: battery storage, medium-voltage
 substations, industrial distribution boards, charging infrastructure, and the
@@ -22,6 +22,18 @@ prove workmanship rather than claim it:
 can carry meaning: it marks what is live, what is certified, and what costs
 money. Everything else is a warm neutral derived from the same two.
 
+The page ships light and dark, and the header control cycles
+auto → light → dark. Auto is the default, because a visitor who has already
+told their phone they want dark should not have to tell us as well. The choice
+is stamped on `<html>` before first paint, so a chosen theme never flashes the
+other one.
+
+Two rules keep that honest. Brand yellow is a *fill*, never ink: `--zon-ink`
+and `--zon-graf` darken on paper so type and chart marks stay readable, while
+`--zon` keeps its brightness for anything sitting on a dark ground. And the
+hero and the photo captions are pinned to the light-on-dark set regardless of
+theme, because they sit on a photograph that is dark either way.
+
 **The imagery is generated, not stock.** The hero and the isometric service
 renders in `public/img` were produced for this site. They are deliberately
 *illustrations*, not photographs: presenting invented photos as the company's
@@ -34,7 +46,7 @@ the job dossier stay marked as pending until real site photography exists.
 pnpm install
 pnpm dev            # http://localhost:3000 -> redirects to your language
 pnpm build          # 16 prerendered routes
-pnpm typecheck
+pnpm typecheck      # the gate — `next lint` was removed in Next 16
 pnpm check:todos    # everything the owner still has to supply
 ```
 
@@ -74,7 +86,7 @@ Copy `.env.example` to `.env.local`. Every variable is optional in development:
 
 | Variable | Effect when unset |
 |---|---|
-| `NEXT_PUBLIC_SITE_URL` | canonical URLs fall back to `https://pupa-electric.nl` |
+| `NEXT_PUBLIC_SITE_URL` | canonical URLs fall back to `https://pupa-elektrotechniek.nl` |
 | `NEXT_PUBLIC_WHATSAPP` | the floating button points at the quote form instead |
 | `RESEND_API_KEY`, `QUOTE_TO_EMAIL` | quote requests are written to the server log and the visitor still sees success — **in production a missing key is a visible error instead, because a lost lead is worse than a silent drop** |
 

@@ -5,14 +5,44 @@ import { locales, type Locale } from './config';
  * keyword a Dutch customer searches for. `PageId` is the stable internal name;
  * the slug is what ends up in the address bar.
  */
-export const pageIds = ['quote', 'privacy', 'terms'] as const;
+export const pageIds = [
+  'services',
+  'work',
+  'about',
+  'careers',
+  'quote',
+  'privacy',
+  'terms',
+] as const;
 
 export type PageId = (typeof pageIds)[number];
 
 export const slugs: Record<PageId, Record<Locale, string>> = {
-  quote: { nl: 'offerte', en: 'quote', es: 'presupuesto' },
-  privacy: { nl: 'privacy', en: 'privacy', es: 'privacidad' },
-  terms: { nl: 'algemene-voorwaarden', en: 'terms', es: 'condiciones' },
+  services: { nl: 'diensten', en: 'services', es: 'servicios', fr: 'prestations', pt: 'servicos' },
+  work: {
+    nl: 'werkdossier',
+    en: 'our-work',
+    es: 'nuestro-trabajo',
+    fr: 'nos-chantiers',
+    pt: 'os-nossos-trabalhos',
+  },
+  about: {
+    nl: 'over-ons',
+    en: 'about-us',
+    es: 'sobre-nosotros',
+    fr: 'a-propos',
+    pt: 'sobre-nos',
+  },
+  careers: {
+    nl: 'werken-bij',
+    en: 'careers',
+    es: 'trabaja-con-nosotros',
+    fr: 'nous-rejoindre',
+    pt: 'trabalhar-connosco',
+  },
+  quote: { nl: 'offerte', en: 'quote', es: 'presupuesto', fr: 'devis', pt: 'orcamento' },
+  privacy: { nl: 'privacy', en: 'privacy', es: 'privacidad', fr: 'confidentialite', pt: 'privacidade' },
+  terms: { nl: 'algemene-voorwaarden', en: 'terms', es: 'condiciones', fr: 'conditions', pt: 'condicoes' },
 };
 
 export function slugFor(page: PageId, locale: Locale): string {

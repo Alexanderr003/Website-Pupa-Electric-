@@ -1,12 +1,16 @@
 import type { Locale } from '@/i18n/config';
-import { getDictionary } from '@/i18n/get-dictionary';
 import { certifications } from '@/content/certifications';
 import { nbsp } from '@/lib/format';
-import { Todo } from './Todo';
 
+/**
+ * Names and meaning only. The registration numbers and expiry dates were on
+ * these cards, but most are issued in an individual engineer's name rather than
+ * the company's, and a customer does not need them to decide anything — so they
+ * are withheld and offered on request instead. The section heading says so; if
+ * this ever comes back, the data is still in `content/certifications.ts` and the
+ * labels are still in the dictionary.
+ */
 export function CertWall({ locale }: { locale: Locale }) {
-  const t = getDictionary(locale);
-
   return (
     <div className="certs">
       {certifications.map((cert) => {
@@ -18,14 +22,6 @@ export function CertWall({ locale }: { locale: Locale }) {
             </div>
             <p className="eyebrow">{copy.kind}</p>
             <p>{nbsp(copy.meaning)}</p>
-            <div className="cert-meta">
-              <span>
-                {t.certnr} <Todo value={cert.registration} />
-              </span>
-              <span>
-                {t.certval} <Todo value={cert.validUntil} />
-              </span>
-            </div>
           </article>
         );
       })}
