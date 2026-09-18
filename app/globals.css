@@ -354,22 +354,34 @@ img{display:block;max-width:100%}
    photograph is left alone. */
 .van::before{content:"";position:absolute;inset:0;z-index:-1;
   background:linear-gradient(90deg,rgba(5,5,6,.9) 0%,rgba(5,5,6,.82) 22%,rgba(5,5,6,.45) 42%,rgba(5,5,6,.06) 62%,rgba(5,5,6,0) 78%)}
-@media (max-width:860px){
-  /* Stacked, the copy sits over the bottom of the frame instead of beside it —
-     and the band grows, because at 300px the text filled the whole thing and
-     left a sliver of photograph nobody could make anything out in. */
-  .van{min-height:470px}
-  /* Portrait crop of a landscape photograph: centred, it framed the empty
-     tarmac between the cabinets and the van. The van is on the right. */
-  .van img{object-position:74% 50%}
-  .van::before{background:linear-gradient(180deg,rgba(5,5,6,.06) 0%,rgba(5,5,6,.3) 34%,rgba(5,5,6,.86) 62%,rgba(5,5,6,.93) 100%)}
-}
+
 .van-copy{max-width:46ch}
 .van-copy h3{font-size:clamp(1.3rem,2.6vw,1.9rem);color:#F7F4EC;margin-bottom:12px}
 .van-copy p{color:#CFC9BC;font-size:var(--t-sm);line-height:1.66}
 .van-copy .plate{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-family:var(--f-mono);
   font-size:var(--t-xs);letter-spacing:.14em;text-transform:uppercase;background:var(--zon);
   color:var(--op-zon);padding:7px 12px;border-radius:3px;font-weight:700}
+@media (max-width:860px){
+  /* On a phone the text stops sitting on the photograph altogether.
+     Laying it over the bottom half meant a black van under a black scrim: the
+     subject of the picture disappeared, whichever way the gradient was tuned.
+     Stacked instead — the whole photograph, then the words on the panel — the
+     van is simply visible and the type is black on cream. The image is a
+     Next.js `fill` image, so its inline position has to be overridden here. */
+  .van{display:block;min-height:0;padding:0;align-items:stretch;
+    background:var(--paneel);border:1px solid var(--lijn);isolation:auto}
+  .van::before{display:none}
+  /* z-index:-2 puts the photograph behind the band, which is what let the
+     overlay design work. Stacked, the band has an opaque panel background, so
+     the picture has to come back to the front or it is simply painted over. */
+  .van img{position:relative!important;inset:auto!important;z-index:auto!important;
+    width:100%!important;height:auto!important;aspect-ratio:16/10;object-position:62% 50%;
+    border-bottom:1px solid var(--lijn)}
+  .van-copy{max-width:none;padding:20px clamp(16px,4vw,24px) 22px}
+  .van-copy h3{color:var(--wit)}
+  .van-copy p{color:var(--grijs)}
+  .van-copy .plate{margin-top:18px}
+}
 
 /* ===================== PRICE ===================== */
 .tbl-scroll{overflow-x:auto;border:1px solid var(--lijn);border-radius:6px;background:var(--paneel)}
