@@ -29,12 +29,15 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
+/*
+ * The site opens light whatever the device prefers, so the browser chrome is
+ * told the same thing rather than being keyed to `prefers-color-scheme` — that
+ * used to paint the address bar black around a cream page. The toggle keeps
+ * this in step when a visitor chooses dark.
+ */
 export const viewport: Viewport = {
-  colorScheme: 'dark light',
-  themeColor: [
-    { media: '(prefers-color-scheme: dark)', color: '#0A0A0B' },
-    { media: '(prefers-color-scheme: light)', color: '#F3F0E7' },
-  ],
+  colorScheme: 'light dark',
+  themeColor: '#F3F0E7',
 };
 
 export async function generateMetadata({

@@ -14,46 +14,46 @@
  */
 
 /* ===================== ZON & ZWART ===================== */
+/*
+ * Light is the default the site opens in, for everyone, whatever the device is
+ * set to. A customer comparing installers in daylight should not have to work
+ * out that the dark page they landed on is a preference of their phone's; and
+ * the yellow reads as a warning colour on cream, which is what it is on a
+ * distribution board. Dark is a choice the visitor makes with the button in the
+ * header, and it is remembered from then on.
+ *
+ * So the light values are the base here and dark is the override — the way
+ * round it is stated is the way round the site behaves.
+ */
 :root{
-  color-scheme: dark;
-  --nacht:#0A0A0B; --zwart:#000; --paneel:#121214; --paneel2:#191A1C; --paneel3:#232427;
-  --lijn:rgba(255,210,0,.15); --lijn2:rgba(255,210,0,.34);
-  --wit:#F5F2EA; --grijs:#9C968A; --grijs2:#6B665E;
+  color-scheme: light;
+  --nacht:#F3F0E7; --zwart:#0A0A0B; --paneel:#FFFDF7; --paneel2:#E9E5D8; --paneel3:#DCD7C6;
+  --lijn:rgba(40,34,10,.16); --lijn2:rgba(168,116,0,.45);
+  --wit:#111112; --grijs:#56524A; --grijs2:#87827A;
   --zon:#FFD200; --zon-l:#FFE467; --zon-d:#C9A200;
-  --zon-ink:#FFD200;            /* yellow used as TEXT */
-  --zon-graf:#FFD200;           /* yellow used as a MARK: rules, bars, focus rings */
+  --zon-ink:#8A6400;            /* yellow used as TEXT — darkened to hold contrast on cream */
+  --zon-graf:#B07C00;           /* yellow used as a MARK: rules, bars, focus rings */
   --op-zon:#0A0A0B;             /* text sitting ON a yellow fill */
-  --rood:#E4573F;
-  --schaduw:0 1px 1px rgba(0,0,0,.6), 0 10px 30px -14px rgba(0,0,0,.85), 0 30px 70px -40px #000;
-  --gloed:0 0 0 1px rgba(255,210,0,.18), 0 10px 40px -14px rgba(255,210,0,.22);
+  --rood:#B3301B;
+  --schaduw:0 1px 1px rgba(60,48,16,.07), 0 10px 26px -16px rgba(60,48,16,.35), 0 26px 60px -38px rgba(60,48,16,.4);
+  --gloed:0 0 0 1px rgba(168,116,0,.22), 0 10px 34px -16px rgba(200,148,0,.35);
   --f-dsp:var(--font-display),'Archivo','Helvetica Neue',Arial,sans-serif;
   --f-body:var(--font-body),'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
   --f-mono:var(--font-mono),'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
   --t-xs:.715rem; --t-sm:.83rem; --t-base:1rem; --t-md:1.08rem; --t-lg:1.32rem;
   --t-xl:1.9rem; --t-2xl:clamp(1.9rem,3.6vw,2.9rem); --t-hero:clamp(2.6rem,7vw,5.8rem);
-  --grain:.055;
-}
-@media (prefers-color-scheme: light){
-  :root:not([data-theme="dark"]){
-    color-scheme: light;
-    --nacht:#F3F0E7; --zwart:#0A0A0B; --paneel:#FFFDF7; --paneel2:#E9E5D8; --paneel3:#DCD7C6;
-    --lijn:rgba(40,34,10,.16); --lijn2:rgba(168,116,0,.45);
-    --wit:#111112; --grijs:#56524A; --grijs2:#87827A;
-    --zon-ink:#8A6400; --zon-graf:#B07C00; --op-zon:#0A0A0B;
-    --schaduw:0 1px 1px rgba(60,48,16,.07), 0 10px 26px -16px rgba(60,48,16,.35), 0 26px 60px -38px rgba(60,48,16,.4);
-    --gloed:0 0 0 1px rgba(168,116,0,.22), 0 10px 34px -16px rgba(200,148,0,.35);
-    --grain:.03;
-  }
-}
-:root[data-theme="light"]{
-  color-scheme: light;
-  --nacht:#F3F0E7; --zwart:#0A0A0B; --paneel:#FFFDF7; --paneel2:#E9E5D8; --paneel3:#DCD7C6;
-  --lijn:rgba(40,34,10,.16); --lijn2:rgba(168,116,0,.45);
-  --wit:#111112; --grijs:#56524A; --grijs2:#87827A;
-  --zon-ink:#8A6400; --zon-graf:#B07C00; --op-zon:#0A0A0B;
-  --schaduw:0 1px 1px rgba(60,48,16,.07), 0 10px 26px -16px rgba(60,48,16,.35), 0 26px 60px -38px rgba(60,48,16,.4);
-  --gloed:0 0 0 1px rgba(168,116,0,.22), 0 10px 34px -16px rgba(200,148,0,.35);
   --grain:.03;
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --nacht:#0A0A0B; --zwart:#000; --paneel:#121214; --paneel2:#191A1C; --paneel3:#232427;
+  --lijn:rgba(255,210,0,.15); --lijn2:rgba(255,210,0,.34);
+  --wit:#F5F2EA; --grijs:#9C968A; --grijs2:#6B665E;
+  --zon-ink:#FFD200; --zon-graf:#FFD200; --op-zon:#0A0A0B;
+  --rood:#E4573F;
+  --schaduw:0 1px 1px rgba(0,0,0,.6), 0 10px 30px -14px rgba(0,0,0,.85), 0 30px 70px -40px #000;
+  --gloed:0 0 0 1px rgba(255,210,0,.18), 0 10px 40px -14px rgba(255,210,0,.22);
+  --grain:.055;
 }
 
 *,*::before,*::after{box-sizing:border-box}
