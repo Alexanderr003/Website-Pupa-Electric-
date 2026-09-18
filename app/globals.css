@@ -15,15 +15,10 @@
 
 /* ===================== ZON & ZWART ===================== */
 /*
- * Light is the default the site opens in, for everyone, whatever the device is
- * set to. A customer comparing installers in daylight should not have to work
- * out that the dark page they landed on is a preference of their phone's; and
- * the yellow reads as a warning colour on cream, which is what it is on a
- * distribution board. Dark is a choice the visitor makes with the button in the
- * header, and it is remembered from then on.
- *
- * So the light values are the base here and dark is the override — the way
- * round it is stated is the way round the site behaves.
+ * One appearance: cream ground, near-black type, and the yellow scarce enough
+ * to keep meaning something. There was a dark variant behind a button in the
+ * header; it read as too dark against the photographs and is gone, so this is
+ * the whole palette rather than half of it.
  */
 :root{
   color-scheme: light;
@@ -44,18 +39,6 @@
   --t-xl:1.9rem; --t-2xl:clamp(1.9rem,3.6vw,2.9rem); --t-hero:clamp(2.6rem,7vw,5.8rem);
   --grain:.03;
 }
-:root[data-theme="dark"]{
-  color-scheme: dark;
-  --nacht:#0A0A0B; --zwart:#000; --paneel:#121214; --paneel2:#191A1C; --paneel3:#232427;
-  --lijn:rgba(255,210,0,.15); --lijn2:rgba(255,210,0,.34);
-  --wit:#F5F2EA; --grijs:#9C968A; --grijs2:#6B665E;
-  --zon-ink:#FFD200; --zon-graf:#FFD200; --op-zon:#0A0A0B;
-  --rood:#E4573F;
-  --schaduw:0 1px 1px rgba(0,0,0,.6), 0 10px 30px -14px rgba(0,0,0,.85), 0 30px 70px -40px #000;
-  --gloed:0 0 0 1px rgba(255,210,0,.18), 0 10px 40px -14px rgba(255,210,0,.22);
-  --grain:.055;
-}
-
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-padding-top:104px}
 body{background:var(--nacht);color:var(--wit);font-family:var(--f-body);font-size:var(--t-base);
@@ -207,8 +190,11 @@ img{display:block;max-width:100%}
   transform:scale(1.04)}
 .anim-drift{animation:drift 26s ease-in-out infinite alternate}
 @keyframes drift{from{transform:scale(1.04) translate3d(0,0,0)}to{transform:scale(1.13) translate3d(-1.6%,-1.4%,0)}}
+/* The wash is only there to carry the type, so it is heavy where the words are
+   and gone where they are not. It used to stay at 42–60% across the right-hand
+   side, where nothing is written — which simply hid the photograph. */
 .hero::before{content:"";position:absolute;inset:0;z-index:-1;
-  background:linear-gradient(100deg,rgba(5,5,6,.95) 2%,rgba(5,5,6,.82) 30%,rgba(5,5,6,.42) 62%,rgba(5,5,6,.6) 100%)}
+  background:linear-gradient(100deg,rgba(5,5,6,.93) 0%,rgba(5,5,6,.88) 34%,rgba(5,5,6,.62) 52%,rgba(5,5,6,.24) 72%,rgba(5,5,6,.08) 90%,rgba(5,5,6,.06) 100%)}
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:38%;z-index:-1;
   background:linear-gradient(180deg,transparent,var(--hero-grond) 92%)}
 .hero .wrap{position:relative}
@@ -261,8 +247,8 @@ img{display:block;max-width:100%}
 .svc-fig{position:relative;overflow:hidden;background:#050506;aspect-ratio:33/25}
 .svc-fig img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.22,1,.36,1)}
 .svc:hover .svc-fig img{transform:scale(1.06)}
-.svc-fig::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,transparent 52%,rgba(5,5,6,.92));pointer-events:none}
+.svc-fig::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent 46%,rgba(5,5,6,.2) 64%,rgba(5,5,6,.86) 100%)}
 .svc-tag{position:absolute;left:14px;top:14px;z-index:2;font-family:var(--f-mono);font-size:.62rem;
   letter-spacing:.16em;text-transform:uppercase;background:var(--zon);color:var(--op-zon);
   padding:5px 9px;border-radius:2px;font-weight:600}
@@ -350,7 +336,7 @@ img{display:block;max-width:100%}
 .wall img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
 .wall figure:hover img{transform:scale(1.06)}
 .wall .frame::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(180deg,transparent 46%,rgba(5,5,6,.9))}
+  background:linear-gradient(180deg,transparent 42%,rgba(5,5,6,.16) 60%,rgba(5,5,6,.88) 100%)}
 .wall figcaption{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:16px 16px 17px;
   font-size:var(--t-sm);line-height:1.5;color:#EFEBE1}
 .wall figcaption::before{content:"";display:block;width:26px;height:2px;background:var(--zon);
@@ -362,8 +348,22 @@ img{display:block;max-width:100%}
   border:1px solid var(--lijn);min-height:300px;display:flex;align-items:flex-end;
   padding:clamp(24px,4vw,44px)}
 .van img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover}
+/* The van is on the right of this photograph and it is a black van. The old
+   wash ran 92% → 20% from left to right, so the one thing the picture is of sat
+   under a grey film. The text keeps its ground on the left; past the middle the
+   photograph is left alone. */
 .van::before{content:"";position:absolute;inset:0;z-index:-1;
-  background:linear-gradient(90deg,rgba(5,5,6,.92) 8%,rgba(5,5,6,.6) 48%,rgba(5,5,6,.2) 100%)}
+  background:linear-gradient(90deg,rgba(5,5,6,.9) 0%,rgba(5,5,6,.82) 22%,rgba(5,5,6,.45) 42%,rgba(5,5,6,.06) 62%,rgba(5,5,6,0) 78%)}
+@media (max-width:860px){
+  /* Stacked, the copy sits over the bottom of the frame instead of beside it —
+     and the band grows, because at 300px the text filled the whole thing and
+     left a sliver of photograph nobody could make anything out in. */
+  .van{min-height:470px}
+  /* Portrait crop of a landscape photograph: centred, it framed the empty
+     tarmac between the cabinets and the van. The van is on the right. */
+  .van img{object-position:74% 50%}
+  .van::before{background:linear-gradient(180deg,rgba(5,5,6,.06) 0%,rgba(5,5,6,.3) 34%,rgba(5,5,6,.86) 62%,rgba(5,5,6,.93) 100%)}
+}
 .van-copy{max-width:46ch}
 .van-copy h3{font-size:clamp(1.3rem,2.6vw,1.9rem);color:#F7F4EC;margin-bottom:12px}
 .van-copy p{color:#CFC9BC;font-size:var(--t-sm);line-height:1.66}
@@ -454,9 +454,14 @@ td small{display:block;color:var(--grijs2);font-size:var(--t-xs);margin-top:4px;
 }
 
 /* ===================== HOME DOORS ===================== */
-/* The whole middle of the front page: four links, each one a destination. */
+/* Four links, each one a destination.
+   `auto-fit` at 290px gave three across on a 1240px page and left the fourth
+   card alone on its own row beside an empty half-screen. Four explicit columns
+   on a wide page, two on a medium one, one on a phone — no orphan at any width. */
 .doors{list-style:none;margin:0;padding:0;display:grid;gap:12px;
-  grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr))}
+  grid-template-columns:repeat(4,1fr)}
+@media (max-width:1080px){.doors{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.doors{grid-template-columns:1fr}}
 .door{position:relative;display:flex;flex-direction:column;gap:9px;height:100%;
   padding:24px 26px 54px;border:1px solid var(--lijn);border-radius:6px;background:var(--paneel);
   text-decoration:none;overflow:hidden;
@@ -473,6 +478,31 @@ td small{display:block;color:var(--grijs2);font-size:var(--t-xs);margin-top:4px;
 .door-go{position:absolute;left:26px;bottom:20px;color:var(--zon-ink);font-size:1.15rem;line-height:1;
   transition:transform .22s cubic-bezier(.22,1,.36,1)}
 .door:hover .door-go,.door:focus-visible .door-go{transform:translateX(7px)}
+
+/* ===================== SERVICE STRIP (home) =====================
+   The five disciplines as photographs rather than a list. The full cards, with
+   the ratings and what is and is not included, stay on the services page: this
+   is the front page saying what the work looks like, not explaining it. */
+.svc-strip{list-style:none;margin:0;padding:0;display:grid;gap:12px;
+  grid-template-columns:repeat(5,1fr)}
+@media (max-width:1080px){.svc-strip{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:680px){.svc-strip{grid-template-columns:repeat(2,1fr)}}
+.svc-mini{position:relative;display:block;overflow:hidden;border-radius:6px;isolation:isolate;
+  border:1px solid var(--lijn);background:#050506;text-decoration:none;
+  transition:border-color .2s ease,transform .25s cubic-bezier(.22,1,.36,1)}
+.svc-mini:hover,.svc-mini:focus-visible{border-color:var(--lijn2);transform:translateY(-4px)}
+.svc-mini .frame{position:relative;aspect-ratio:4/5;overflow:hidden}
+.svc-mini img{width:100%;height:100%;object-fit:cover;
+  transition:transform .55s cubic-bezier(.22,1,.36,1)}
+.svc-mini:hover img,.svc-mini:focus-visible img{transform:scale(1.06)}
+.svc-mini .frame::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent 40%,rgba(5,5,6,.14) 58%,rgba(5,5,6,.88) 100%)}
+.svc-mini .lbl{position:absolute;left:14px;right:14px;bottom:13px;z-index:2;
+  font-family:var(--f-dsp);font-variation-settings:'wdth' 96;font-weight:900;
+  font-size:1.02rem;line-height:1.16;letter-spacing:-.015em;color:#F7F4EC}
+.svc-mini .kop{position:absolute;left:12px;top:12px;z-index:2;font-family:var(--f-mono);
+  font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;
+  background:var(--zon);color:var(--op-zon);padding:4px 8px;border-radius:2px}
 
 /* ===================== PAGE FURNITURE ===================== */
 /* The "read the rest" link that ends a teaser section. */

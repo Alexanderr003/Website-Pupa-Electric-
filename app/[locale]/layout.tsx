@@ -30,13 +30,12 @@ export function generateStaticParams() {
 }
 
 /*
- * The site opens light whatever the device prefers, so the browser chrome is
- * told the same thing rather than being keyed to `prefers-color-scheme` — that
- * used to paint the address bar black around a cream page. The toggle keeps
- * this in step when a visitor chooses dark.
+ * One appearance, so the browser chrome is told exactly that: a dark address
+ * bar around a cream page was what keying this to `prefers-color-scheme` used
+ * to produce.
  */
 export const viewport: Viewport = {
-  colorScheme: 'light dark',
+  colorScheme: 'light',
   themeColor: '#F3F0E7',
 };
 
@@ -66,13 +65,11 @@ export async function generateMetadata({
 }
 
 /**
- * Applies the stored motion and theme preferences before first paint, so a
- * visitor who switched ambient animation off never sees a frame of it, and a
- * chosen theme never flashes the other one.
+ * Applies the stored motion preference before first paint, so a visitor who
+ * switched ambient animation off never sees a frame of it.
  */
 const BOOT = `(function(){try{var d=document.documentElement;
-var m=localStorage.getItem('pupa-motion');d.setAttribute('data-motion',m==='off'?'off':'on');
-var t=localStorage.getItem('pupa-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t)}catch(e){}})();`;
+var m=localStorage.getItem('pupa-motion');d.setAttribute('data-motion',m==='off'?'off':'on')}catch(e){}})();`;
 
 export default async function LocaleLayout({
   children,

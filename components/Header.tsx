@@ -5,7 +5,6 @@ import { hrefFor } from '@/i18n/routing';
 import { LocaleSwitcher } from './LocaleSwitcher';
 import { HeaderPanel } from './HeaderPanel';
 import { MotionToggle } from './MotionToggle';
-import { ThemeToggle } from './ThemeToggle';
 
 export function Header({ locale }: { locale: Locale }) {
   const t = getDictionary(locale);
@@ -54,12 +53,7 @@ export function Header({ locale }: { locale: Locale }) {
           navLabel={t.mainmenu}
           menuLabel={t.menuOpen}
           closeLabel={t.menuClose}
-          quick={
-            <>
-              <ThemeToggle labels={{ light: t.themeLight, dark: t.themeDark }} />
-              <LocaleSwitcher current={locale} label={t.langLabel} />
-            </>
-          }
+          quick={<LocaleSwitcher current={locale} label={t.langLabel} />}
         >
           <MotionToggle pauseLabel={t.motionLabel} resumeLabel={t.motionResume} />
           <Link className="btn btn-p" href={hrefFor('quote', locale)}>
