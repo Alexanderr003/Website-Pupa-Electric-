@@ -11,8 +11,6 @@ const ui = {
     langLabel: 'Taal',
     fAddress: 'Adres',
     themeAuto: 'Weergave: volgt je apparaat — klik voor licht',
-    themeLight: 'Weergave: licht — klik voor donker',
-    themeDark: 'Weergave: donker — klik voor licht',
     vanAlt: 'De bus van Pupa Elektrotechniek naast een rij batterijkasten op een bedrijventerrein.',
     vanTitle: 'Eén bus, één ploeg, van de eerste meting tot de laatste keuring.',
     vanBody:
@@ -170,8 +168,6 @@ const ui = {
     langLabel: 'Language',
     fAddress: 'Address',
     themeAuto: 'Appearance: follows your device — click for light',
-    themeLight: 'Appearance: light — click for dark',
-    themeDark: 'Appearance: dark — click for light',
     vanAlt: 'The Pupa Elektrotechniek van beside a row of battery cabinets on an industrial estate.',
     vanTitle: 'One van, one crew, from the first measurement to the final inspection.',
     vanBody:
@@ -329,8 +325,6 @@ const ui = {
     langLabel: 'Idioma',
     fAddress: 'Dirección',
     themeAuto: 'Apariencia: sigue a tu dispositivo — pulsa para claro',
-    themeLight: 'Apariencia: claro — pulsa para oscuro',
-    themeDark: 'Apariencia: oscuro — pulsa para claro',
     vanAlt: 'La furgoneta de Pupa Elektrotechniek junto a una fila de armarios de baterías en un polígono.',
     vanTitle: 'Una furgoneta, un equipo, de la primera medición a la inspección final.',
     vanBody:
@@ -488,8 +482,6 @@ const ui = {
     langLabel: 'Langue',
     fAddress: 'Adresse',
     themeAuto: 'Affichage : suit votre appareil — cliquez pour le clair',
-    themeLight: 'Affichage : clair — cliquez pour le sombre',
-    themeDark: 'Affichage : sombre — cliquez pour le clair',
     vanAlt: 'La camionnette de Pupa Elektrotechniek à côté d’une rangée d’armoires de batteries sur une zone industrielle.',
     vanTitle: 'Une camionnette, une équipe, de la première mesure au contrôle final.',
     vanBody:
@@ -647,8 +639,6 @@ const ui = {
     langLabel: 'Idioma',
     fAddress: 'Morada',
     themeAuto: 'Aspeto: segue o seu dispositivo — clique para claro',
-    themeLight: 'Aspeto: claro — clique para escuro',
-    themeDark: 'Aspeto: escuro — clique para claro',
     vanAlt: 'A carrinha da Pupa Elektrotechniek junto a uma fila de armários de baterias numa zona industrial.',
     vanTitle: 'Uma carrinha, uma equipa, da primeira medição à inspeção final.',
     vanBody:

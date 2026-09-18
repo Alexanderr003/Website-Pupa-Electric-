@@ -31,7 +31,10 @@ export function Hero({ locale }: { locale: Locale }) {
           <Link className="btn btn-p" href={hrefFor('quote', locale)}>
             {t.cta2}
           </Link>
-          <Link className="btn btn-s" href={`/${locale}#dossier`}>
+          {/* The dossier left the front page when the sections were split across
+              routes; this button kept pointing at the anchor it used to have and
+              scrolled to nothing. It goes to the page that now holds it. */}
+          <Link className="btn btn-s" href={hrefFor('work', locale)}>
             {t.cta3}
           </Link>
         </div>

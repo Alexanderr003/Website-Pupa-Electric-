@@ -7,6 +7,8 @@ import { Hero } from '@/components/Hero';
 import { Ticker } from '@/components/Ticker';
 import { LocalBusinessJsonLd } from '@/components/JsonLd';
 import { NavCards } from '@/components/sections/NavCards';
+import { ServiceStrip } from '@/components/sections/ServiceStrip';
+import { WorkStrip } from '@/components/sections/WorkStrip';
 import { CtaBand } from '@/components/sections/CtaBand';
 
 export function generateStaticParams() {
@@ -25,11 +27,17 @@ export async function generateMetadata({
 }
 
 /**
- * An introduction, and nothing else. The hero says what the company does, the
- * four doors say where to go, and the band at the bottom says how to get in
- * touch. Every subject — the services, the job dossier, the photographs, the
- * price breakdown, the certifications, who we are, the vacancies — is a page of
- * its own, reached from here rather than unrolled underneath.
+ * An introduction — but one with something to look at.
+ *
+ * The first version was the hero, four cards of text and a contact band, which
+ * was correct in structure and empty on screen: a company whose whole argument
+ * is "look at the work" was showing none of it. So the five disciplines and
+ * three job photographs are here as pictures, each one a link to the page that
+ * explains it.
+ *
+ * What is still not here is the explaining: no price table, no dossier, no
+ * certification wall, no specifications. Those are pages, reached from here
+ * rather than unrolled underneath.
  */
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale: raw } = await params;
@@ -43,6 +51,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <Ticker />
       <div className="wrap">
         <NavCards locale={locale} />
+        <ServiceStrip locale={locale} />
+        <WorkStrip locale={locale} />
         <CtaBand locale={locale} />
       </div>
     </>
